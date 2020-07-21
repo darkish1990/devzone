@@ -411,7 +411,7 @@
                                 "description": {
                                     "type": "string"
                                 },
-                                "parent_project_id": {
+                                "project_id": {
                                     "type": "string"
                                 },
                                 "contacts": {
@@ -606,7 +606,7 @@
                                     2,
                                     3
                                 ],
-                                "parent_project_id": 4,
+                                "project_id": 4,
                                 "graphql": "null||url",
                                 "swagger": "null||url",
                                 "request_protocol": "B2B",
@@ -624,6 +624,7 @@
                                 ],
                                 "guide_steps": [
                                     {
+                                        "id": 3,
                                         "stepTitle": "סטייג'",
                                         "content": "תוכן",
                                         "picture": "hash של תמונה"
@@ -825,6 +826,7 @@
                                 ],
                                 "guide_steps": [
                                     {
+                                        "id": 3,
                                         "stepTitle": "סטייג'",
                                         "content": "תוכן",
                                         "picture": "hash של תמונה"
@@ -1009,7 +1011,8 @@
                         "description": "gets file",
                         "schema": {
                             "example": {
-                                "fieldpath": "site.com/s3/hash"
+                                "fieldpath": "site.com/s3/hash",
+                                "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
                             }
                         }
                     }
@@ -1025,8 +1028,8 @@
                         "schema": {
                             "example": {
                                 "name": "string",
-                                "email":"something@something.com",
-                                "chat_url":"chat.com/fsigbsidf"
+                                "email": "something@something.com",
+                                "chat_url": "chat.com/fsigbsidf"
                             }
                         }
                     }
@@ -1113,12 +1116,10 @@
                 "description": "gets the user data from the server",
                 "responses": {
                     "200": {
-                        "description": " here is the user data",
+                        "description": " you need to create a cookie with a userId for example k4935858. you need to create it manually to simulate the auth process being done by out server",
                         "schema": {
                             "example": {
-                                "first_name": "שם פרטי",
-                                "last_name": "שם משפחה",
-                                "id": "k943787263"
+                                "redirect_url": "site.com/afterauth"
                             }
                         }
                     }
