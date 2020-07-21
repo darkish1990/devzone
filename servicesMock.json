@@ -1,0 +1,60 @@
+[
+    {
+        "name": "שירות הדוקים הארצי",
+        "serviceImg": "https://i.ytimg.com/vi/dzG1TL3CjEs/maxresdefault.jpg",
+        "serviceId": 3,
+        "description": "puppies!!",
+        "contacts": [
+            {
+                "category": "מפתחים",
+                "first_name": "מנסור",
+                "pic": "something.jpg",
+                "id": 2,
+                "email": "something@something.com",
+                "last_name": "מנגיסטו",
+                "phone_number": 55555555,
+                "role": "מנהל משקר"
+            }
+        ],
+        "tags": "דבר,שכין,דם,בכורות",
+        "graphql": "url",
+        "swagger": null,
+        "request_protocol": "B2B",
+        "releases": "lorem opsum something else",
+        "views": 35,
+        "load_rate": 2000,
+        "notes": "הערות",
+        "files": {
+            "null": "null"
+        }
+    },
+    {
+        "name": "שירות התעסוקה לציפורי שדה",
+        "serviceImg": "https://i.ytimg.com/vi/dzG1TL3CjEs/maxresdefault.jpg",
+        "serviceId": 4,
+        "description": "puppies!!",
+        "contacts": [
+            {
+                "category": "מנהל מוצר",
+                "first_name": "משה",
+                "pic": "something.jpg",
+                "id": 2,
+                "email": "something@something.com",
+                "last_name": "פיקאצ'ו",
+                "phone_number": 55555555,
+                "role": "מנהל קוקה קולה"
+            }
+        ],
+        "tags": "דבר,שכין,",
+        "graphql": "url",
+        "swagger": null,
+        "request_protocol": "B2B",
+        "releases": "lorem opsum something else",
+        "views": 3,
+        "load_rate": 200,
+        "notes": "הערות",
+        "files": {
+            "null": "null"
+        }
+    }
+]
