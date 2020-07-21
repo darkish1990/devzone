@@ -67,9 +67,6 @@
                                 "name": {
                                     "type": "string"
                                 },
-                                "permission": {
-                                    "type": "boolean"
-                                },
                                 "tags": {
                                     "type": "array",
                                     "items": {
@@ -91,9 +88,8 @@
                                 "description": "מידע על הפרויקט ",
                                 "contacts": [
                                     "k943787263",
-                                    "k943787263"
+                                    "k943787983"
                                 ],
-                                "permission": false,
                                 "tags": [
                                     1,
                                     2,
@@ -137,7 +133,7 @@
                                         "load_rate": 2000,
                                         "files": [
                                             {
-                                                "category": "file||img||video",
+                                                "category": "file||img||video||swagger",
                                                 "display_name": "שם הקובץ",
                                                 "id": 123,
                                                 "path": "hash",
@@ -189,26 +185,9 @@
                                 "services": [
                                     {
                                         "name": "שם שירות",
-                                        "last_updated": "string",
                                         "serviceImg": "site/api/object-storage/serviceId/pic.png",
                                         "serviceId": 1,
                                         "description": "מידע על הסרביס ",
-                                        "contacts": {
-                                            "devTeam": {
-                                                "militaryPhone": "0522236663",
-                                                "civilainPhone": "0522236663"
-                                            },
-                                            "warRoomTeam": {
-                                                "militaryPhone": "0522236663",
-                                                "civilainPhone": "0522236663"
-                                            },
-                                            "serviceSupervisor": {
-                                                "serviceSupervisorRole": "מנהל מוצר",
-                                                "id": "t2364616",
-                                                "phone": "0522236663"
-                                            },
-                                            "chatUrl": "url"
-                                        },
                                         "tags": [
                                             1,
                                             2,
@@ -217,25 +196,7 @@
                                         "graphql": "null||url",
                                         "swagger": "null||url",
                                         "request_protocol": "B2B",
-                                        "release_notes": "תוכן של מה חדש",
-                                        "views": 3,
-                                        "load_rate": 2000,
-                                        "files": [
-                                            {
-                                                "category": "file||img||video",
-                                                "display_name": "שם הקובץ",
-                                                "id": 123,
-                                                "path": "hash",
-                                                "fileDescription": "זה קובץ"
-                                            }
-                                        ],
-                                        "guide_steps": [
-                                            {
-                                                "stepTitle": "סטייג'",
-                                                "content": "תוכן",
-                                                "picture": "hash של תמונה"
-                                            }
-                                        ]
+                                        "views": 3
                                     }
                                 ]
                             }
@@ -303,9 +264,6 @@
                                 "name": {
                                     "type": "string"
                                 },
-                                "permission": {
-                                    "type": "boolean"
-                                },
                                 "id": {
                                     "type": "integer"
                                 },
@@ -337,7 +295,6 @@
                                         "chatUrl": "url"
                                     }
                                 ],
-                                "permission": false,
                                 "tags": [
                                     1,
                                     2,
@@ -381,7 +338,7 @@
                                         "load_rate": 2000,
                                         "files": [
                                             {
-                                                "category": "file||img||video",
+                                                "category": "file||img||video||swagger",
                                                 "display_name": "שם הקובץ",
                                                 "id": 123,
                                                 "path": "hash",
@@ -454,6 +411,9 @@
                                 "description": {
                                     "type": "string"
                                 },
+                                "parent_project_id": {
+                                    "type": "string"
+                                },
                                 "contacts": {
                                     "type": "object",
                                     "properties": {
@@ -489,6 +449,12 @@
                                                     "type": "string"
                                                 },
                                                 "phone": {
+                                                    "type": "string"
+                                                },
+                                                "email": {
+                                                    "type": "string"
+                                                },
+                                                "chat_url": {
                                                     "type": "string"
                                                 }
                                             }
@@ -587,7 +553,7 @@
                                 "load_rate": 2000,
                                 "files": [
                                     {
-                                        "category": "file||img||video",
+                                        "category": "file||img||video||swagger",
                                         "display_name": "שם הקובץ",
                                         "id": 123,
                                         "path": "hash",
@@ -640,6 +606,7 @@
                                     2,
                                     3
                                 ],
+                                "parent_project_id": 4,
                                 "graphql": "null||url",
                                 "swagger": "null||url",
                                 "request_protocol": "B2B",
@@ -648,7 +615,7 @@
                                 "load_rate": 2000,
                                 "files": [
                                     {
-                                        "category": "file||img||video",
+                                        "category": "file||img||video||swagger",
                                         "display_name": "שם הקובץ",
                                         "id": 123,
                                         "path": "hash",
@@ -849,7 +816,7 @@
                                 "load_rate": 2000,
                                 "files": [
                                     {
-                                        "category": "file||img||video",
+                                        "category": "file||img||video||swagger",
                                         "display_name": "שם הקובץ",
                                         "id": 123,
                                         "path": "hash",
@@ -1002,11 +969,11 @@
                                 },
                                 "projectId": {
                                     "type": "string",
-                                    "description":"should have value if comes from project"
+                                    "description": "should have value if comes from project"
                                 },
                                 "serviceId": {
                                     "type": "string",
-                                    "description":"should have value if comes from service"
+                                    "description": "should have value if comes from service"
                                 }
                             }
                         }
@@ -1042,11 +1009,7 @@
                         "description": "gets file",
                         "schema": {
                             "example": {
-                                "fieldname": "docs",
-                                "originalname": "pic.png",
-                                "encoding": "7bit",
-                                "mimetype": "image/png",
-                                "hash": "dkajgfhjbargf893y48273"
+                                "fieldpath": "site.com/s3/hash"
                             }
                         }
                     }
@@ -1061,7 +1024,9 @@
                         "description": "gets the user data from id",
                         "schema": {
                             "example": {
-                                "name": "string"
+                                "name": "string",
+                                "email":"something@something.com",
+                                "chat_url":"chat.com/fsigbsidf"
                             }
                         }
                     }
