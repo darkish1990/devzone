@@ -39,6 +39,98 @@
                     }
                 }
             },
+            "delete": {
+                "parameters": [
+                    {
+                        "name": "Api Parameters",
+                        "description": "the parameters in the body of the request.",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "description": "removes specific project",
+                "responses": {
+                    "200": {
+                        "description": "project deleted"
+                    }
+                }
+            },
+            "put": {
+                "description": "Updates api docs on specific project.",
+                "parameters": [
+                    {
+                        "name": "Api Parameters",
+                        "description": "the parameters in the body of the request.",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "arm": {
+                                    "type": "integer"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "img": {
+                                    "type": "string"
+                                },
+                                "contacts": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "tags": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "example": {
+                                "id": 1,
+                                "arm": 3,
+                                "name": "שם הפרויקט",
+                                "img": "site/api/object-storage/id/pic.png",
+                                "description": "מידע על הפרויקט ",
+                                "contacts": [
+                                    "k943787263"
+                                ],
+                                "tags": [
+                                    1,
+                                    2,
+                                    3
+                                ]
+                            }
+                        },
+                        "description": "project successfully updated."
+                    }
+                }
+            },
             "post": {
                 "description": "creates project .",
                 "parameters": [
@@ -94,60 +186,6 @@
                                     1,
                                     2,
                                     3
-                                ],
-                                "graphql": "null||url",
-                                "swagger": "null||url",
-                                "services": [
-                                    {
-                                        "name": "שם שירות",
-                                        "last_updated": "string",
-                                        "serviceImg": "site/api/object-storage/serviceId/pic.png",
-                                        "serviceId": 1,
-                                        "description": "מידע על הסרביס ",
-                                        "contacts": {
-                                            "devTeam": {
-                                                "militaryPhone": "0522236663",
-                                                "civilainPhone": "0522236663"
-                                            },
-                                            "warRoomTeam": {
-                                                "militaryPhone": "0522236663",
-                                                "civilainPhone": "0522236663"
-                                            },
-                                            "serviceSupervisor": {
-                                                "serviceSupervisorRole": "מנהל מוצר",
-                                                "id": "t2364616",
-                                                "phone": "0522236663"
-                                            },
-                                            "chatUrl": "url"
-                                        },
-                                        "tags": [
-                                            1,
-                                            2,
-                                            3
-                                        ],
-                                        "graphql": "null||url",
-                                        "swagger": "null||url",
-                                        "request_protocol": "B2B",
-                                        "release_notes": "תוכן של מה חדש",
-                                        "views": 3,
-                                        "load_rate": 2000,
-                                        "files": [
-                                            {
-                                                "category": "file||img||video||swagger",
-                                                "display_name": "שם הקובץ",
-                                                "id": 123,
-                                                "path": "hash",
-                                                "fileDescription": "זה קובץ"
-                                            }
-                                        ],
-                                        "guide_steps": [
-                                            {
-                                                "stepTitle": "סטייג'",
-                                                "content": "תוכן",
-                                                "picture": "hash של תמונה"
-                                            }
-                                        ]
-                                    }
                                 ]
                             }
                         },
@@ -174,19 +212,13 @@
                                     3
                                 ],
                                 "contacts": [
-                                    {
-                                        "first_name": "שם פרטי",
-                                        "id": "k943787263",
-                                        "last_name": "שם משפחה",
-                                        "email": "something@something.com",
-                                        "chatUrl": "url"
-                                    }
+                                    "k943787263"
                                 ],
                                 "services": [
                                     {
+                                        "service_id": 1,
                                         "name": "שם שירות",
-                                        "serviceImg": "site/api/object-storage/serviceId/pic.png",
-                                        "serviceId": 1,
+                                        "service_img": "site/api/object-storage/serviceId/pic.png",
                                         "description": "מידע על הסרביס ",
                                         "tags": [
                                             1,
@@ -201,162 +233,7 @@
                                 ]
                             }
                         },
-                        "description": "got projects"
-                    }
-                }
-            },
-            "delete": {
-                "parameters": [
-                    {
-                        "name": "Api Parameters",
-                        "description": "the parameters in the body of the request.",
-                        "in": "body",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "projectId": {
-                                    "type": "integer"
-                                }
-                            }
-                        }
-                    }
-                ],
-                "description": "removes specific project",
-                "responses": {
-                    "200": {
-                        "description": "project deleted"
-                    }
-                }
-            },
-            "put": {
-                "description": "Updates api docs on specific project.",
-                "parameters": [
-                    {
-                        "name": "Api Parameters",
-                        "description": "the parameters in the body of the request.",
-                        "in": "body",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "projectId": {
-                                    "type": "integer"
-                                },
-                                "arm": {
-                                    "type": "integer"
-                                },
-                                "description": {
-                                    "type": "string"
-                                },
-                                "img": {
-                                    "type": "string"
-                                },
-                                "contacts": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "id": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    }
-                                },
-                                "name": {
-                                    "type": "string"
-                                },
-                                "id": {
-                                    "type": "integer"
-                                },
-                                "tags": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "integer"
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "schema": {
-                            "example": {
-                                "id": 1,
-                                "arm": 3,
-                                "name": "שם הפרויקט",
-                                "img": "site/api/object-storage/id/pic.png",
-                                "description": "מידע על הפרויקט ",
-                                "contacts": [
-                                    {
-                                        "first_name": "שם פרטי",
-                                        "id": "k943787263",
-                                        "last_name": "שם משפחה",
-                                        "email": "something@something.com",
-                                        "chatUrl": "url"
-                                    }
-                                ],
-                                "tags": [
-                                    1,
-                                    2,
-                                    3
-                                ],
-                                "graphql": "null||url",
-                                "swagger": "null||url",
-                                "services": [
-                                    {
-                                        "name": "שם שירות",
-                                        "last_updated": "string",
-                                        "serviceImg": "site/api/object-storage/serviceId/pic.png",
-                                        "serviceId": 1,
-                                        "description": "מידע על הסרביס ",
-                                        "contacts": {
-                                            "devTeam": {
-                                                "militaryPhone": "0522236663",
-                                                "civilainPhone": "0522236663"
-                                            },
-                                            "warRoomTeam": {
-                                                "militaryPhone": "0522236663",
-                                                "civilainPhone": "0522236663"
-                                            },
-                                            "serviceSupervisor": {
-                                                "serviceSupervisorRole": "מנהל מוצר",
-                                                "id": "t2364616",
-                                                "phone": "0522236663"
-                                            },
-                                            "chatUrl": "url"
-                                        },
-                                        "tags": [
-                                            1,
-                                            2,
-                                            3
-                                        ],
-                                        "graphql": "null||url",
-                                        "swagger": "null||url",
-                                        "request_protocol": "B2B",
-                                        "release_notes": "תוכן של מה חדש",
-                                        "views": 3,
-                                        "load_rate": 2000,
-                                        "files": [
-                                            {
-                                                "category": "file||img||video||swagger",
-                                                "display_name": "שם הקובץ",
-                                                "id": 123,
-                                                "path": "hash",
-                                                "fileDescription": "זה קובץ"
-                                            }
-                                        ],
-                                        "guide_steps": [
-                                            {
-                                                "stepTitle": "סטייג'",
-                                                "content": "תוכן",
-                                                "picture": "hash של תמונה"
-                                            }
-                                        ]
-                                    }
-                                ]
-                            }
-                        },
-                        "description": "API docs successfully updated."
+                        "description": "got project"
                     }
                 }
             }
@@ -389,276 +266,6 @@
                     }
                 }
             },
-            "post": {
-                "description": "creates service .",
-                "parameters": [
-                    {
-                        "name": "Api Parameters",
-                        "description": "the parameters in the body of the request.",
-                        "in": "body",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string"
-                                },
-                                "last_updated": {
-                                    "type": "string"
-                                },
-                                "serviceImg": {
-                                    "type": "string"
-                                },
-                                "description": {
-                                    "type": "string"
-                                },
-                                "project_id": {
-                                    "type": "string"
-                                },
-                                "contacts": {
-                                    "type": "object",
-                                    "properties": {
-                                        "devTeam": {
-                                            "type": "object",
-                                            "properties": {
-                                                "militaryPhone": {
-                                                    "type": "string"
-                                                },
-                                                "civilainPhone": {
-                                                    "type": "string"
-                                                }
-                                            }
-                                        },
-                                        "warRoomTeam": {
-                                            "type": "object",
-                                            "properties": {
-                                                "militaryPhone": {
-                                                    "type": "string"
-                                                },
-                                                "civilainPhone": {
-                                                    "type": "string"
-                                                }
-                                            }
-                                        },
-                                        "serviceSupervisor": {
-                                            "type": "object",
-                                            "properties": {
-                                                "serviceSupervisorRole": {
-                                                    "type": "string"
-                                                },
-                                                "id": {
-                                                    "type": "string"
-                                                },
-                                                "phone": {
-                                                    "type": "string"
-                                                },
-                                                "email": {
-                                                    "type": "string"
-                                                },
-                                                "chat_url": {
-                                                    "type": "string"
-                                                }
-                                            }
-                                        },
-                                        "chatUrl": {
-                                            "type": "string"
-                                        }
-                                    }
-                                },
-                                "tags": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "integer"
-                                    }
-                                },
-                                "graphql": {
-                                    "type": "string"
-                                },
-                                "swagger": {
-                                    "type": "string"
-                                },
-                                "request_protocol": {
-                                    "type": "string"
-                                },
-                                "release_notes": {
-                                    "type": "string"
-                                },
-                                "views": {
-                                    "type": "integer"
-                                },
-                                "load_rate": {
-                                    "type": "integer"
-                                },
-                                "files": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "category": {
-                                                "type": "string"
-                                            },
-                                            "display_name": {
-                                                "type": "string"
-                                            },
-                                            "id": {
-                                                "type": "integer"
-                                            },
-                                            "path": {
-                                                "type": "string"
-                                            },
-                                            "fileDescription": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "schema": {
-                            "example": {
-                                "name": "שם שירות",
-                                "last_updated": "string",
-                                "serviceImg": "דרך לתמונה",
-                                "serviceId": 1,
-                                "description": "מידע על הסרביס ",
-                                "contacts": {
-                                    "devTeam": {
-                                        "militaryPhone": "0522236663",
-                                        "civilainPhone": "0522236663"
-                                    },
-                                    "warRoomTeam": {
-                                        "militaryPhone": "0522236663",
-                                        "civilainPhone": "0522236663"
-                                    },
-                                    "serviceSupervisor": {
-                                        "serviceSupervisorRole": "מנהל מוצר",
-                                        "id": "t2364616",
-                                        "phone": "0522236663"
-                                    },
-                                    "chatUrl": "url"
-                                },
-                                "tags": [
-                                    1,
-                                    2,
-                                    3
-                                ],
-                                "graphql": "null||url",
-                                "swagger": "null||url",
-                                "request_protocol": "B2B",
-                                "release_notes": "תוכן של מה חדש",
-                                "views": 3,
-                                "load_rate": 2000,
-                                "files": [
-                                    {
-                                        "category": "file||img||video||swagger",
-                                        "display_name": "שם הקובץ",
-                                        "id": 123,
-                                        "path": "hash",
-                                        "fileDescription": "זה קובץ"
-                                    }
-                                ],
-                                "guide_steps": [
-                                    {
-                                        "stepTitle": "סטייג'",
-                                        "content": "תוכן",
-                                        "picture": "hash של תמונה"
-                                    }
-                                ]
-                            }
-                        },
-                        "description": "API docs successfully updated."
-                    }
-                }
-            }
-        },
-        "/services/:id": {
-            "get": {
-                "responses": {
-                    "200": {
-                        "schema": {
-                            "example": {
-                                "name": "שם שירות",
-                                "last_updated": "string",
-                                "serviceImg": "דרך לתמונה",
-                                "serviceId": 1,
-                                "description": "מידע על הסרביס ",
-                                "contacts": {
-                                    "devTeam": {
-                                        "militaryPhone": "0522236663",
-                                        "civilainPhone": "0522236663"
-                                    },
-                                    "warRoomTeam": {
-                                        "militaryPhone": "0522236663",
-                                        "civilainPhone": "0522236663"
-                                    },
-                                    "serviceSupervisor": {
-                                        "serviceSupervisorRole": "מנהל מוצר",
-                                        "id": "t2364616",
-                                        "phone": "0522236663"
-                                    },
-                                    "chatUrl": "url"
-                                },
-                                "tags": [
-                                    1,
-                                    2,
-                                    3
-                                ],
-                                "project_id": 4,
-                                "graphql": "null||url",
-                                "swagger": "null||url",
-                                "request_protocol": "B2B",
-                                "release_notes": "תוכן של מה חדש",
-                                "views": 3,
-                                "load_rate": 2000,
-                                "files": [
-                                    {
-                                        "category": "file||img||video||swagger",
-                                        "display_name": "שם הקובץ",
-                                        "id": 123,
-                                        "path": "hash",
-                                        "fileDescription": "זה קובץ"
-                                    }
-                                ],
-                                "guide_steps": [
-                                    {
-                                        "id": 3,
-                                        "stepTitle": "סטייג'",
-                                        "content": "תוכן",
-                                        "picture": "hash של תמונה"
-                                    }
-                                ]
-                            }
-                        },
-                        "description": "get service"
-                    }
-                }
-            },
-            "delete": {
-                "parameters": [
-                    {
-                        "name": "Api Parameters",
-                        "description": "the parameters in the body of the request.",
-                        "in": "body",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "serviceId": {
-                                    "type": "integer"
-                                }
-                            }
-                        }
-                    }
-                ],
-                "description": "removes specific service",
-                "responses": {
-                    "200": {
-                        "description": "service deleted"
-                    }
-                }
-            },
             "put": {
                 "description": "Updates api docs on specific service.",
                 "parameters": [
@@ -687,43 +294,32 @@
                                 "contacts": {
                                     "type": "object",
                                     "properties": {
-                                        "devTeam": {
+                                        "dev-team": {
                                             "type": "object",
                                             "properties": {
-                                                "militaryPhone": {
+                                                "military-phone": {
                                                     "type": "string"
                                                 },
-                                                "civilainPhone": {
+                                                "civilain-phone": {
                                                     "type": "string"
                                                 }
                                             }
                                         },
-                                        "warRoomTeam": {
+                                        "war-room-team": {
                                             "type": "object",
                                             "properties": {
-                                                "militaryPhone": {
+                                                "military-phone": {
                                                     "type": "string"
                                                 },
-                                                "civilainPhone": {
+                                                "civilain-phone": {
                                                     "type": "string"
                                                 }
                                             }
                                         },
-                                        "serviceSupervisor": {
-                                            "type": "object",
-                                            "properties": {
-                                                "serviceSupervisorRole": {
-                                                    "type": "string"
-                                                },
-                                                "id": {
-                                                    "type": "string"
-                                                },
-                                                "phone": {
-                                                    "type": "string"
-                                                }
-                                            }
+                                        "service-supervisor-id": {
+                                            "type": "string"
                                         },
-                                        "chatUrl": {
+                                        "chat-url": {
                                             "type": "string"
                                         }
                                     }
@@ -789,20 +385,16 @@
                                 "serviceId": 1,
                                 "description": "מידע על הסרביס ",
                                 "contacts": {
-                                    "devTeam": {
-                                        "militaryPhone": "0522236663",
-                                        "civilainPhone": "0522236663"
+                                    "dev-team": {
+                                        "military-phone": "0522236663",
+                                        "civilain-phone": "0522236663"
                                     },
-                                    "warRoomTeam": {
-                                        "militaryPhone": "0522236663",
-                                        "civilainPhone": "0522236663"
+                                    "war-room-team": {
+                                        "military-phone": "0522236663",
+                                        "civilain-phone": "0522236663"
                                     },
-                                    "serviceSupervisor": {
-                                        "serviceSupervisorRole": "מנהל מוצר",
-                                        "id": "t2364616",
-                                        "phone": "0522236663"
-                                    },
-                                    "chatUrl": "url"
+                                    "service-supervisor-id": "t2364616",
+                                    "chat-url": "url"
                                 },
                                 "tags": [
                                     1,
@@ -824,10 +416,10 @@
                                         "fileDescription": "זה קובץ"
                                     }
                                 ],
-                                "guide_steps": [
+                                "guides": [
                                     {
                                         "id": 3,
-                                        "stepTitle": "סטייג'",
+                                        "title": "סטייג'",
                                         "content": "תוכן",
                                         "picture": "hash של תמונה"
                                     }
@@ -837,7 +429,246 @@
                         "description": "API docs successfully updated."
                     }
                 }
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "name": "Service Parameters",
+                        "description": "the parameters in the body of the request.",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "description": "removes specific service",
+                "responses": {
+                    "200": {
+                        "description": "service deleted"
+                    }
+                }
+            },
+            "post": {
+                "description": "creates service .",
+                "parameters": [
+                    {
+                        "name": "Api Parameters",
+                        "description": "the parameters in the body of the request.",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "last_updated": {
+                                    "type": "string"
+                                },
+                                "img": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "project_id": {
+                                    "type": "integer"
+                                },
+                                "contacts": {
+                                    "type": "object",
+                                    "properties": {
+                                        "dev-team": {
+                                            "type": "object",
+                                            "properties": {
+                                                "military-phone": {
+                                                    "type": "string"
+                                                },
+                                                "civilain-phone": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "war-room-team": {
+                                            "type": "object",
+                                            "properties": {
+                                                "military-phone": {
+                                                    "type": "string"
+                                                },
+                                                "civilain-phone": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "service-supervisor-id": {
+                                            "type": "string"
+                                        },
+                                        "chat-url": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "tags": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "graphql": {
+                                    "type": "string"
+                                },
+                                "swagger": {
+                                    "type": "string"
+                                },
+                                "request_protocol": {
+                                    "type": "string"
+                                },
+                                "release_notes": {
+                                    "type": "string"
+                                },
+                                "views": {
+                                    "type": "integer"
+                                },
+                                "load_rate": {
+                                    "type": "integer"
+                                },
+                                "files": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "category": {
+                                                "type": "string"
+                                            },
+                                            "display_name": {
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "type": "integer"
+                                            },
+                                            "path": {
+                                                "type": "string"
+                                            },
+                                            "fileDescription": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "example": {
+                                "name": "שם שירות",
+                                "last_updated": "string",
+                                "img": "דרך לתמונה",
+                                "serviceId": 1,
+                                "description": "מידע על הסרביס ",
+                                "contacts": {
+                                    "dev-team": {
+                                        "military-phone": "0522236663",
+                                        "civilain-phone": "0522236663"
+                                    },
+                                    "war-room-team": {
+                                        "military-phone": "0522236663",
+                                        "civilain-phone": "0522236663"
+                                    },
+                                    "service-supervisor-id": "t2364616",
+                                    "chat-url": "url"
+                                },
+                                "tags": [
+                                    1,
+                                    2,
+                                    3
+                                ],
+                                "graphql": "null||url",
+                                "swagger": "null||url",
+                                "request_protocol": "B2B",
+                                "release_notes": "תוכן של מה חדש",
+                                "views": 3,
+                                "load_rate": 2000,
+                                "files": [
+                                    {
+                                        "category": "file||img||video||swagger",
+                                        "display_name": "שם הקובץ",
+                                        "id": 123,
+                                        "path": "hash",
+                                        "fileDescription": "זה קובץ"
+                                    }
+                                ]
+                            }
+                        },
+                        "description": "API docs successfully updated."
+                    }
+                }
             }
+        },
+        "/services/:id": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "schema": {
+                            "example": {
+                                "id": 1,
+                                "name": "שם שירות",
+                                "last_updated": "string",
+                                "img": "דרך לתמונה",
+                                "description": "מידע על הסרביס ",
+                                "contacts": {
+                                    "dev-team": {
+                                        "military-phone": "0522236663",
+                                        "civilain-phone": "0522236663"
+                                    },
+                                    "war-room-team": {
+                                        "military-phone": "0522236663",
+                                        "civilain-phone": "0522236663"
+                                    },
+                                    "service-supervisor-id": "t2364616",
+                                    "chat-url": "url"
+                                },
+                                "tags": [
+                                    1,
+                                    2,
+                                    3
+                                ],
+                                "project_id": 4,
+                                "graphql": "null||url",
+                                "swagger": "null||url",
+                                "request_protocol": "B2B",
+                                "release_notes": "תוכן של מה חדש",
+                                "views": 3,
+                                "load_rate": 2000,
+                                "files": [
+                                    {
+                                        "category": "file||img||video||swagger",
+                                        "display_name": "שם הקובץ",
+                                        "id": 123,
+                                        "path": "hash",
+                                        "fileDescription": "זה קובץ"
+                                    }
+                                ],
+                                "guides": [
+                                    {
+                                        "id": 3,
+                                        "title": "סטייג'",
+                                        "content": "תוכן",
+                                        "picture": "hash של תמונה"
+                                    }
+                                ]
+                            }
+                        },
+                        "description": "get service"
+                    }
+                }
+            }
+            
         },
         "/services/viewedByUser": {
             "post": {
