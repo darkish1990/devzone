@@ -294,32 +294,32 @@
                                 "contacts": {
                                     "type": "object",
                                     "properties": {
-                                        "dev-team": {
+                                        "dev_team": {
                                             "type": "object",
                                             "properties": {
-                                                "military-phone": {
+                                                "military_phone": {
                                                     "type": "string"
                                                 },
-                                                "civilain-phone": {
+                                                "civilain_phone": {
                                                     "type": "string"
                                                 }
                                             }
                                         },
-                                        "war-room-team": {
+                                        "war_room_team": {
                                             "type": "object",
                                             "properties": {
-                                                "military-phone": {
+                                                "military_phone": {
                                                     "type": "string"
                                                 },
-                                                "civilain-phone": {
+                                                "civilain_phone": {
                                                     "type": "string"
                                                 }
                                             }
                                         },
-                                        "service-supervisor-id": {
+                                        "service_supervisor_id": {
                                             "type": "string"
                                         },
-                                        "chat-url": {
+                                        "chat_url": {
                                             "type": "string"
                                         }
                                     }
@@ -385,16 +385,16 @@
                                 "serviceId": 1,
                                 "description": "מידע על הסרביס ",
                                 "contacts": {
-                                    "dev-team": {
-                                        "military-phone": "0522236663",
-                                        "civilain-phone": "0522236663"
+                                    "dev_team": {
+                                        "military_phone": "0522236663",
+                                        "civilain_phone": "0522236663"
                                     },
-                                    "war-room-team": {
-                                        "military-phone": "0522236663",
-                                        "civilain-phone": "0522236663"
+                                    "war_room_team": {
+                                        "military_phone": "0522236663",
+                                        "civilain_phone": "0522236663"
                                     },
-                                    "service-supervisor-id": "t2364616",
-                                    "chat-url": "url"
+                                    "service_supervisor_id": "t2364616",
+                                    "chat_url": "url"
                                 },
                                 "tags": [
                                     1,
@@ -481,32 +481,32 @@
                                 "contacts": {
                                     "type": "object",
                                     "properties": {
-                                        "dev-team": {
+                                        "dev_team": {
                                             "type": "object",
                                             "properties": {
-                                                "military-phone": {
+                                                "military_phone": {
                                                     "type": "string"
                                                 },
-                                                "civilain-phone": {
+                                                "civilain_phone": {
                                                     "type": "string"
                                                 }
                                             }
                                         },
-                                        "war-room-team": {
+                                        "war_room_team": {
                                             "type": "object",
                                             "properties": {
-                                                "military-phone": {
+                                                "military_phone": {
                                                     "type": "string"
                                                 },
-                                                "civilain-phone": {
+                                                "civilain_phone": {
                                                     "type": "string"
                                                 }
                                             }
                                         },
-                                        "service-supervisor-id": {
+                                        "service_supervisor_id": {
                                             "type": "string"
                                         },
-                                        "chat-url": {
+                                        "chat_url": {
                                             "type": "string"
                                         }
                                     }
@@ -572,16 +572,16 @@
                                 "serviceId": 1,
                                 "description": "מידע על הסרביס ",
                                 "contacts": {
-                                    "dev-team": {
-                                        "military-phone": "0522236663",
-                                        "civilain-phone": "0522236663"
+                                    "dev_team": {
+                                        "military_phone": "0522236663",
+                                        "civilain_phone": "0522236663"
                                     },
-                                    "war-room-team": {
-                                        "military-phone": "0522236663",
-                                        "civilain-phone": "0522236663"
+                                    "war_room_team": {
+                                        "military_phone": "0522236663",
+                                        "civilain_phone": "0522236663"
                                     },
-                                    "service-supervisor-id": "t2364616",
-                                    "chat-url": "url"
+                                    "service_supervisor_id": "t2364616",
+                                    "chat_url": "url"
                                 },
                                 "tags": [
                                     1,
@@ -622,16 +622,16 @@
                                 "img": "דרך לתמונה",
                                 "description": "מידע על הסרביס ",
                                 "contacts": {
-                                    "dev-team": {
-                                        "military-phone": "0522236663",
-                                        "civilain-phone": "0522236663"
+                                    "dev_team": {
+                                        "military_phone": "0522236663",
+                                        "civilain_phone": "0522236663"
                                     },
-                                    "war-room-team": {
-                                        "military-phone": "0522236663",
-                                        "civilain-phone": "0522236663"
+                                    "war_room_team": {
+                                        "military_phone": "0522236663",
+                                        "civilain_phone": "0522236663"
                                     },
-                                    "service-supervisor-id": "t2364616",
-                                    "chat-url": "url"
+                                    "service_supervisor_id": "t2364616",
+                                    "chat_url": "url"
                                 },
                                 "tags": [
                                     1,
@@ -695,7 +695,7 @@
                     "200": {
                         "description": " subscribed to service.",
                         "schema": {
-                            "example": {
+                            "example": [{
                                 "name": "שם שירות",
                                 "last_updated": "string",
                                 "img": "דרך לתמונה",
@@ -710,7 +710,7 @@
                                 "swagger": "null||url",
                                 "request_protocol": "B2B",
                                 "views": 3
-                            }
+                            }]
                         }
                     },
                     "500": {
@@ -862,6 +862,24 @@
                                 "email": "something@something.com",
                                 "chat_url": "chat.com/fsigbsidf"
                             }
+                        }
+                    }
+                }
+            }
+        },
+        "/notifications/:userId": {
+            "get": {
+                "description": "gets notifications for specific",
+                "responses": {
+                    "200": {
+                        "description": "gets notifications for the user from the user id",
+                        "schema": {
+                            "example": [{
+                                "id": 1,
+                                "service_id": 5,
+                                "content": "סטטוס שירות ניהול משתמשים שונה מעתידי ומבצעי",
+                                "creation_date": "ISO \"2020-07-20T10:12:53.966Z\""
+                            }]
                         }
                     }
                 }
