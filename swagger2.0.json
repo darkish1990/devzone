@@ -194,9 +194,18 @@
                 }
             }
         },
-        "/projects/:id": {
+        "/projects/{id}": {
             "get": {
                 "description": "Returns a project.",
+                "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID of project to return",
+                      "required": true,
+                      "type": "integer"
+                    }
+                  ],
                 "responses": {
                     "200": {
                         "schema": {
@@ -610,8 +619,17 @@
                 }
             }
         },
-        "/services/:id": {
+        "/services/{id}": {
             "get": {
+                "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID of service to return",
+                      "required": true,
+                      "type": "integer"
+                    }
+                  ],
                 "responses": {
                     "200": {
                         "schema": {
@@ -834,9 +852,18 @@
                 }
             }
         },
-        "/files/:id": {
+        "/files/{id}": {
             "get": {
                 "description": "gets the file from s3",
+                "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID of file to return",
+                      "required": true,
+                      "type": "string"
+                    }
+                  ],
                 "responses": {
                     "200": {
                         "description": "gets file",
@@ -850,9 +877,18 @@
                 }
             }
         },
-        "/user/:id": {
+        "/user/:{id}": {
             "get": {
                 "description": "gets user name from id",
+                "parameters": [
+                    {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID of user to return",
+                      "required": true,
+                      "type": "integer"
+                    }
+                  ],
                 "responses": {
                     "200": {
                         "description": "gets the user data from id",
@@ -881,6 +917,29 @@
                                 "creation_date": "ISO \"2020-07-20T10:12:53.966Z\""
                             }]
                         }
+                    }
+                }
+            }
+        },
+        "/notifications": {
+            "delete": {
+                "parameters": [
+                    {
+                        "name": "notifications Parameters",
+                        "description": "the parameters in the body of the request.",
+                        "in": "body",
+                        "schema": {
+                            "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                        }
+                    }
+                ],
+                "description": "removes notifications",
+                "responses": {
+                    "200": {
+                        "description": "notifications deleted"
                     }
                 }
             }
