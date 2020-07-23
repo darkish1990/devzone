@@ -384,6 +384,7 @@
                                 "serviceImg": "דרך לתמונה",
                                 "serviceId": 1,
                                 "description": "מידע על הסרביס ",
+                                "project_id": 4,
                                 "contacts": {
                                     "dev_team": {
                                         "military_phone": "0522236663",
@@ -571,6 +572,7 @@
                                 "img": "דרך לתמונה",
                                 "serviceId": 1,
                                 "description": "מידע על הסרביס ",
+                                "project_id": 4,
                                 "contacts": {
                                     "dev_team": {
                                         "military_phone": "0522236663",
@@ -668,7 +670,6 @@
                     }
                 }
             }
-            
         },
         "/services/viewedByUser": {
             "post": {
@@ -695,22 +696,24 @@
                     "200": {
                         "description": " subscribed to service.",
                         "schema": {
-                            "example": [{
-                                "name": "שם שירות",
-                                "last_updated": "string",
-                                "img": "דרך לתמונה",
-                                "id": 1,
-                                "description": "מידע על הסרביס ",
-                                "tags": [
-                                    1,
-                                    2,
-                                    3
-                                ],
-                                "graphql": "null||url",
-                                "swagger": "null||url",
-                                "request_protocol": "B2B",
-                                "views": 3
-                            }]
+                            "example": [
+                                {
+                                    "name": "שם שירות",
+                                    "last_updated": "string",
+                                    "img": "דרך לתמונה",
+                                    "id": 1,
+                                    "description": "מידע על הסרביס ",
+                                    "tags": [
+                                        1,
+                                        2,
+                                        3
+                                    ],
+                                    "graphql": "null||url",
+                                    "swagger": "null||url",
+                                    "request_protocol": "B2B",
+                                    "views": 3
+                                }
+                            ]
                         }
                     },
                     "500": {
@@ -874,12 +877,14 @@
                     "200": {
                         "description": "gets notifications for the user from the user id",
                         "schema": {
-                            "example": [{
-                                "id": 1,
-                                "service_id": 5,
-                                "content": "סטטוס שירות ניהול משתמשים שונה מעתידי ומבצעי",
-                                "creation_date": "ISO \"2020-07-20T10:12:53.966Z\""
-                            }]
+                            "example": [
+                                {
+                                    "id": 1,
+                                    "service_id": 5,
+                                    "content": "סטטוס שירות ניהול משתמשים שונה מעתידי ומבצעי",
+                                    "creation_date": "ISO \"2020-07-20T10:12:53.966Z\""
+                                }
+                            ]
                         }
                     }
                 }
