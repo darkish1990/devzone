@@ -81,9 +81,6 @@
                                 "description": {
                                     "type": "string"
                                 },
-                                "img": {
-                                    "type": "string"
-                                },
                                 "contacts": {
                                     "type": "array",
                                     "items": {
@@ -112,18 +109,18 @@
                     "200": {
                         "schema": {
                             "example": {
-                                "id": 1,
                                 "arm": 3,
+                                "id": 1,
                                 "name": "שם הפרויקט",
                                 "img": "site/api/object-storage/id/pic.png",
                                 "description": "מידע על הפרויקט ",
-                                "contacts": [
-                                    "k943787263"
-                                ],
                                 "tags": [
                                     1,
                                     2,
                                     3
+                                ],
+                                "contacts": [
+                                    "k943787263"
                                 ]
                             }
                         },
@@ -148,7 +145,8 @@
                                     "type": "string"
                                 },
                                 "img": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "description": "should be binary"
                                 },
                                 "contacts": {
                                     "type": "array",
@@ -225,7 +223,7 @@
                                 ],
                                 "services": [
                                     {
-                                        "service_id": 1,
+                                        "id": 1,
                                         "name": "שם שירות",
                                         "service_img": "site/api/object-storage/serviceId/pic.png",
                                         "description": "מידע על הסרביס ",
@@ -291,10 +289,7 @@
                                 "last_updated": {
                                     "type": "string"
                                 },
-                                "serviceImg": {
-                                    "type": "string"
-                                },
-                                "serviceId": {
+                                "id": {
                                     "type": "integer"
                                 },
                                 "description": {
@@ -356,29 +351,6 @@
                                 },
                                 "load_rate": {
                                     "type": "integer"
-                                },
-                                "files": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "category": {
-                                                "type": "string"
-                                            },
-                                            "display_name": {
-                                                "type": "string"
-                                            },
-                                            "id": {
-                                                "type": "integer"
-                                            },
-                                            "path": {
-                                                "type": "string"
-                                            },
-                                            "fileDescription": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    }
                                 }
                             }
                         }
@@ -390,8 +362,8 @@
                             "example": {
                                 "name": "שם שירות",
                                 "last_updated": "string",
-                                "serviceImg": "דרך לתמונה",
-                                "serviceId": 1,
+                                "img": "דרך לתמונה",
+                                "id": 1,
                                 "description": "מידע על הסרביס ",
                                 "project_id": 4,
                                 "contacts": {
@@ -418,20 +390,20 @@
                                 "views": 3,
                                 "load_rate": 2000,
                                 "files": [
-                                    {
-                                        "category": "file||img||video||swagger",
-                                        "display_name": "שם הקובץ",
-                                        "id": 123,
-                                        "path": "hash",
-                                        "fileDescription": "זה קובץ"
-                                    }
+                                    "site/api/object-storage/serviceId/pic.png",
+                                    "site/api/object-storage/serviceId/pic1.png",
+                                    "site/api/object-storage/serviceId/pic2.docx"
                                 ],
                                 "guides": [
                                     {
                                         "id": 3,
                                         "title": "סטייג'",
                                         "content": "תוכן",
-                                        "picture": "hash של תמונה"
+                                        "files": [
+                                            "site/api/object-storage/serviceId/pic.png",
+                                            "site/api/object-storage/serviceId/pic1.png",
+                                            "site/api/object-storage/serviceId/pic2.docx"
+                                        ]
                                     }
                                 ]
                             }
@@ -579,7 +551,7 @@
                                 "name": "שם שירות",
                                 "last_updated": "string",
                                 "img": "דרך לתמונה",
-                                "serviceId": 1,
+                                "id": 1,
                                 "description": "מידע על הסרביס ",
                                 "project_id": 4,
                                 "contacts": {
@@ -751,10 +723,10 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "serviceId": {
+                                "service_id": {
                                     "type": "integer"
                                 },
-                                "userid": {
+                                "user_id": {
                                     "type": "string"
                                 }
                             }
@@ -784,10 +756,10 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "userId": {
+                                "user_Id": {
                                     "type": "string"
                                 },
-                                "serviceId": {
+                                "service_id": {
                                     "type": "integer"
                                 }
                             }
@@ -814,20 +786,21 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "docs": {
+                                "file": {
                                     "type": "string",
                                     "description": "should be binary"
                                 },
-                                "type": {
-                                    "type": "string"
-                                },
-                                "projectId": {
+                                "project_id": {
                                     "type": "string",
                                     "description": "should have value if comes from project"
                                 },
-                                "serviceId": {
+                                "service_id": {
                                     "type": "string",
                                     "description": "should have value if comes from service"
+                                },
+                                "type": {
+                                    "type": "string",
+                                    "description": "guides||assets||docs"
                                 }
                             }
                         }
