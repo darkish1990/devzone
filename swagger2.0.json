@@ -197,13 +197,13 @@
                 "description": "Returns a project.",
                 "parameters": [
                     {
-                      "name": "id",
-                      "in": "path",
-                      "description": "ID of project to return",
-                      "required": true,
-                      "type": "integer"
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of project to return",
+                        "required": true,
+                        "type": "integer"
                     }
-                  ],
+                ],
                 "responses": {
                     "200": {
                         "schema": {
@@ -390,9 +390,14 @@
                                 "views": 3,
                                 "load_rate": 2000,
                                 "files": [
-                                    "site/api/object-storage/serviceId/pic.png",
-                                    "site/api/object-storage/serviceId/pic1.png",
-                                    "site/api/object-storage/serviceId/pic2.docx"
+                                    {
+                                        "file_path": "site/api/object-storage/id/pic.png",
+                                        "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                                    },
+                                    {
+                                        "file_path": "site/api/object-storage/serviceId/pic2.docx",
+                                        "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                                    }
                                 ],
                                 "guides": [
                                     {
@@ -400,9 +405,14 @@
                                         "title": "סטייג'",
                                         "content": "תוכן",
                                         "files": [
-                                            "site/api/object-storage/serviceId/pic.png",
-                                            "site/api/object-storage/serviceId/pic1.png",
-                                            "site/api/object-storage/serviceId/pic2.docx"
+                                            {
+                                                "file_path": "site/api/object-storage/id/pic.png",
+                                                "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                                            },
+                                            {
+                                                "file_path": "site/api/object-storage/serviceId/pic2.docx",
+                                                "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                                            }
                                         ]
                                     }
                                 ]
@@ -579,11 +589,12 @@
                                 "load_rate": 2000,
                                 "files": [
                                     {
-                                        "category": "file||img||video||swagger",
-                                        "display_name": "שם הקובץ",
-                                        "id": 123,
-                                        "path": "hash",
-                                        "fileDescription": "זה קובץ"
+                                        "file_path": "site/api/object-storage/id/pic.png",
+                                        "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                                    },
+                                    {
+                                        "file_path": "site/api/object-storage/id/pic.docx",
+                                        "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
                                     }
                                 ]
                             }
@@ -597,13 +608,13 @@
             "get": {
                 "parameters": [
                     {
-                      "name": "id",
-                      "in": "path",
-                      "description": "ID of service to return",
-                      "required": true,
-                      "type": "integer"
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of service to return",
+                        "required": true,
+                        "type": "integer"
                     }
-                  ],
+                ],
                 "responses": {
                     "200": {
                         "schema": {
@@ -639,11 +650,12 @@
                                 "load_rate": 2000,
                                 "files": [
                                     {
-                                        "category": "file||img||video||swagger",
-                                        "display_name": "שם הקובץ",
-                                        "id": 123,
-                                        "path": "hash",
-                                        "fileDescription": "זה קובץ"
+                                        "file_path": "site/api/object-storage/id/pic.png",
+                                        "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                                    },
+                                    {
+                                        "file_path": "site/api/object-storage/id/pic.docx",
+                                        "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
                                     }
                                 ],
                                 "guides": [
@@ -781,7 +793,7 @@
                 "parameters": [
                     {
                         "name": "Api Parameters",
-                        "description": "the parameters in the body of the request the docs should be binary.",
+                        "description": "the parameters in the body of the request the file should be binary and type should be one of the following string for location guidens of file creation (guides:guide files ,assets:pics and videos not related to guides,docs:word ppt xls .....)",
                         "in": "body",
                         "schema": {
                             "type": "object",
@@ -811,43 +823,7 @@
                     "200": {
                         "description": "path to s3 image by hash",
                         "schema": {
-                            "example": {
-                                "img": "dkajgfhjbargf893y48273",
-                                "files": [
-                                    {
-                                        "fieldname": "docs",
-                                        "originalname": "pic.png",
-                                        "encoding": "7bit",
-                                        "mimetype": "image/png",
-                                        "hash": "dkajgfhjbargf893y48273"
-                                    }
-                                ]
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/files/{id}": {
-            "get": {
-                "description": "gets the file from s3",
-                "parameters": [
-                    {
-                      "name": "id",
-                      "in": "path",
-                      "description": "ID of file to return",
-                      "required": true,
-                      "type": "string"
-                    }
-                  ],
-                "responses": {
-                    "200": {
-                        "description": "gets file",
-                        "schema": {
-                            "example": {
-                                "fieldpath": "site.com/s3/hash",
-                                "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
-                            }
+                            "example": {}
                         }
                     }
                 }
@@ -858,13 +834,13 @@
                 "description": "gets user name from id",
                 "parameters": [
                     {
-                      "name": "id",
-                      "in": "path",
-                      "description": "ID of user to return",
-                      "required": true,
-                      "type": "integer"
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of user to return",
+                        "required": true,
+                        "type": "integer"
                     }
-                  ],
+                ],
                 "responses": {
                     "200": {
                         "description": "gets the user data from id",
@@ -908,9 +884,9 @@
                         "in": "body",
                         "schema": {
                             "type": "array",
-                                    "items": {
-                                        "type": "integer"
-                                    }
+                            "items": {
+                                "type": "integer"
+                            }
                         }
                     }
                 ],
