@@ -94,6 +94,9 @@
                                 "arm": {
                                     "type": "integer"
                                 },
+                                "img": {
+                                    "type": "string"
+                                },
                                 "description": {
                                     "type": "string"
                                 },
@@ -233,21 +236,7 @@
                                     "k943787263"
                                 ],
                                 "services": [
-                                    {
-                                        "id": 1,
-                                        "name": "שם שירות",
-                                        "img": "site/api/object-storage/serviceId/pic.png",
-                                        "description": "מידע על הסרביס ",
-                                        "tags": [
-                                            1,
-                                            2,
-                                            3
-                                        ],
-                                        "graphql": "null||url",
-                                        "swagger": "null||url",
-                                        "request_protocol": "B2B",
-                                        "views": 3
-                                    }
+                                    1,2,3
                                 ]
                             }
                         },
@@ -369,6 +358,30 @@
                                 "load_rate": {
                                     "type": "integer"
                                 },
+                                "files": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "path": {
+                                                "type": "string"
+                                            },
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            },
+                                            "date_modified": {
+                                                "type": "string"
+                                            }
+
+                                        }
+                                    }
+                                },
                                 "guides": {
                                     "type": "array",
                                     "items": {
@@ -383,17 +396,9 @@
                                             "content": {
                                                 "type": "string"
                                             },
-                                            "files": {
-                                                "type": "array",
-                                                "items": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "file_path": {
-                                                            "type": "string"
-                                                        },
-                                                        "last_updated": {
-                                                            "type": "string"
-                                                        }
+                                            "img": {
+                                                "type": "string"
+                                          
                                                     }
                                                 }
                                             }
@@ -401,8 +406,7 @@
                                     }
                                 }
                             }
-                        }
-                    }
+                       
                 ],
                 "responses": {
                     "200": {
@@ -443,12 +447,11 @@
                                 "load_rate": 2000,
                                 "files": [
                                     {
-                                        "file_path": "site/api/object-storage/id/pic.png",
-                                        "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
-                                    },
-                                    {
-                                        "file_path": "site/api/object-storage/serviceId/pic2.docx",
-                                        "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                                        "path": "site/api/object-storage/id/pic.png",
+                                        "title": "תיק איפיון",
+                                        "description": "הסבר",
+                                        "type": "ppt",
+                                        "date_modified": "ISO \"2020-07-20T10:12:53.966Z\""
                                     }
                                 ],
                                 "guides": [
@@ -456,16 +459,7 @@
                                         "id": 3,
                                         "title": "סטייג'",
                                         "content": "תוכן",
-                                        "files": [
-                                            {
-                                                "file_path": "site/api/object-storage/id/pic.png",
-                                                "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
-                                            },
-                                            {
-                                                "file_path": "site/api/object-storage/serviceId/pic2.docx",
-                                                "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
-                                            }
-                                        ]
+                                        "img": "site/api/object-storage/id/pic.png"
                                     }
                                 ]
                             }
@@ -595,21 +589,22 @@
                                     "items": {
                                         "type": "object",
                                         "properties": {
-                                            "category": {
-                                                "type": "string"
-                                            },
-                                            "display_name": {
-                                                "type": "string"
-                                            },
-                                            "id": {
-                                                "type": "integer"
-                                            },
                                             "path": {
                                                 "type": "string"
                                             },
-                                            "fileDescription": {
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            },
+                                            "type": {
+                                                "type": "string"
+                                            },
+                                            "date_modified": {
                                                 "type": "string"
                                             }
+
                                         }
                                     }
                                 }
@@ -656,12 +651,11 @@
                                 "load_rate": 2000,
                                 "files": [
                                     {
-                                        "file_path": "site/api/object-storage/id/pic.png",
-                                        "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
-                                    },
-                                    {
-                                        "file_path": "site/api/object-storage/id/pic.docx",
-                                        "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                                        "path": "site/api/object-storage/id/pic.png",
+                                        "title": "תיק איפיון",
+                                        "description": "הסבר",
+                                        "type": "ppt",
+                                        "date_modified": "ISO \"2020-07-20T10:12:53.966Z\""
                                     }
                                 ]
                             }
@@ -721,12 +715,11 @@
                                 "load_rate": 2000,
                                 "files": [
                                     {
-                                        "file_path": "site/api/object-storage/id/pic.png",
-                                        "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
-                                    },
-                                    {
-                                        "file_path": "site/api/object-storage/id/pic.docx",
-                                        "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                                        "path": "site/api/object-storage/id/pic.png",
+                                        "title": "תיק איפיון",
+                                        "description": "הסבר",
+                                        "type": "ppt",
+                                        "date_modified": "ISO \"2020-07-20T10:12:53.966Z\""
                                     }
                                 ],
                                 "guides": [
@@ -734,7 +727,7 @@
                                         "id": 3,
                                         "title": "סטייג'",
                                         "content": "תוכן",
-                                        "picture": "hash של תמונה"
+                                        "img": "site/api/object-storage/id/pic.png"
                                     }
                                 ]
                             }
@@ -806,47 +799,6 @@
                     },
                     "500": {
                         "description": " couldn't remove from service."
-                    }
-                }
-            }
-        },
-        "/files/upload": {
-            "post": {
-                "parameters": [
-                    {
-                        "name": "Api Parameters",
-                        "description": "the parameters in the body of the request the file should be binary and type should be one of the following string for location guidens of file creation (guides:guide files ,assets:pics and videos not related to guides,docs:word ppt xls .....)",
-                        "in": "body",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "file": {
-                                    "type": "string",
-                                    "description": "should be binary"
-                                },
-                                "project_id": {
-                                    "type": "string",
-                                    "description": "should have value if comes from project"
-                                },
-                                "service_id": {
-                                    "type": "string",
-                                    "description": "should have value if comes from service"
-                                },
-                                "type": {
-                                    "type": "string",
-                                    "description": "guides||assets||docs"
-                                }
-                            }
-                        }
-                    }
-                ],
-                "description": "stores files in s3 and returns the hash of the file",
-                "responses": {
-                    "200": {
-                        "description": "path to s3 image by hash",
-                        "schema": {
-                            "example": {}
-                        }
                     }
                 }
             }
