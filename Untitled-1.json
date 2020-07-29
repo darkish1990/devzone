@@ -1,0 +1,985 @@
+{
+    "info": {
+      "title": "DevZone",
+      "version": "1.0",
+      "description": "Where you can find api documentation for all operational services."
+    },
+    "swagger": "2.0",
+    "paths": {
+      "/projects": {
+        "get": {
+          "description": "Returns all projects.",
+          "responses": {
+            "200": {
+              "schema": {
+                "example": [
+                  {
+                    "id": 1,
+                    "arm": 4,
+                    "name": "שם הפרויקט",
+                    "img": "site/api/object-storage/id/pic.png",
+                    "description": "מידע על הפרויקט ",
+                    "views": 3,
+                    "tags": [
+                      1,
+                      2,
+                      3
+                    ],
+                    "numberOfServices": 3
+                  }
+                ]
+              },
+              "description": "got projects"
+            }
+          }
+        },
+        "delete": {
+          "parameters": [
+            {
+              "name": "Api Parameters",
+              "description": "the parameters in the body of the request.",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          ],
+          "description": "removes specific project",
+          "responses": {
+            "200": {
+              "description": "project deleted"
+            }
+          }
+        },
+        "put": {
+          "description": "Updates api docs on specific project.",
+          "parameters": [
+            {
+              "name": "Api Parameters",
+              "description": "the parameters in the body of the request.",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "arm": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "contacts": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "example": {
+                  "arm": 3,
+                  "id": 1,
+                  "name": "שם הפרויקט",
+                  "img": "site/api/object-storage/id/pic.png",
+                  "description": "מידע על הפרויקט ",
+                  "tags": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "contacts": [
+                    "k943787263"
+                  ]
+                }
+              },
+              "description": "project successfully updated."
+            }
+          }
+        },
+        "post": {
+          "description": "creates project .",
+          "parameters": [
+            {
+              "name": "Api Parameters",
+              "description": "the parameters in the body of the request.",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "arm": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "img": {
+                    "type": "string",
+                    "description": "should be binary"
+                  },
+                  "contacts": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "example": {
+                  "arm": 5,
+                  "name": "שם הפרויקט",
+                  "img": "site/api/object-storage/id/pic.png",
+                  "id": 1,
+                  "description": "מידע על הפרויקט ",
+                  "contacts": [
+                    "k943787263",
+                    "k943787983"
+                  ],
+                  "tags": [
+                    1,
+                    2,
+                    3
+                  ]
+                }
+              },
+              "description": "project created successfully ."
+            }
+          }
+        }
+      },
+      "/projects/{id}": {
+        "get": {
+          "description": "Returns a project.",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of project to return",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "example": {
+                  "arm": 3,
+                  "id": 1,
+                  "name": "שם הפרויקט",
+                  "img": "site/api/object-storage/id/pic.png",
+                  "description": "מידע על הפרויקט ",
+                  "tags": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "contacts": [
+                    "k943787263"
+                  ],
+                  "services": [
+                    {
+                      "id": 1,
+                      "name": "שם שירות",
+                      "service_img": "site/api/object-storage/serviceId/pic.png",
+                      "description": "מידע על הסרביס ",
+                      "tags": [
+                        1,
+                        2,
+                        3
+                      ],
+                      "graphql": "null||url",
+                      "swagger": "null||url",
+                      "request_protocol": "B2B",
+                      "views": 3
+                    }
+                  ]
+                }
+              },
+              "description": "got project"
+            }
+          }
+        }
+      },
+      "/services": {
+        "get": {
+          "responses": {
+            "200": {
+              "schema": {
+                "example": [
+                  {
+                    "name": "שם שירות",
+                    "last_updated": "string",
+                    "img": "דרך לתמונה",
+                    "id": 1,
+                    "description": "מידע על הסרביס ",
+                    "tags": [
+                      1,
+                      2,
+                      3
+                    ],
+                    "project_id": 4,
+                    "graphql": "null||url",
+                    "swagger": "null||url",
+                    "request_protocol": "B2B",
+                    "views": 3
+                  }
+                ]
+              },
+              "description": "get all services"
+            }
+          }
+        },
+        "put": {
+          "description": "Updates api docs on specific service.",
+          "parameters": [
+            {
+              "name": "Api Parameters",
+              "description": "the parameters in the body of the request.",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "last_updated": {
+                    "type": "string"
+                  },
+                  "id": {
+                    "type": "integer"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "contacts": {
+                    "type": "object",
+                    "properties": {
+                      "dev_team": {
+                        "type": "object",
+                        "properties": {
+                          "military_phone": {
+                            "type": "string"
+                          },
+                          "civilain_phone": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "war_room_team": {
+                        "type": "object",
+                        "properties": {
+                          "military_phone": {
+                            "type": "string"
+                          },
+                          "civilain_phone": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "service_supervisor_id": {
+                        "type": "string"
+                      },
+                      "chat_url": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "graphql": {
+                    "type": "string"
+                  },
+                  "swagger": {
+                    "type": "string"
+                  },
+                  "request_protocol": {
+                    "type": "string"
+                  },
+                  "release_notes": {
+                    "type": "string"
+                  },
+                  "views": {
+                    "type": "integer"
+                  },
+                  "load_rate": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "example": {
+                  "name": "שם שירות",
+                  "last_updated": "string",
+                  "img": "דרך לתמונה",
+                  "id": 1,
+                  "description": "מידע על הסרביס ",
+                  "project_id": 4,
+                  "contacts": {
+                    "dev_team": {
+                      "military_phone": "0522236663",
+                      "civilain_phone": "0522236663"
+                    },
+                    "war_room_team": {
+                      "military_phone": "0522236663",
+                      "civilain_phone": "0522236663"
+                    },
+                    "service_supervisor_id": "t2364616",
+                    "chat_url": "url"
+                  },
+                  "tags": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "graphql": "null||url",
+                  "swagger": "null||url",
+                  "request_protocol": "B2B",
+                  "release_notes": "תוכן של מה חדש",
+                  "views": 3,
+                  "load_rate": 2000,
+                  "files": [
+                    {
+                      "file_path": "site/api/object-storage/id/pic.png",
+                      "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                    },
+                    {
+                      "file_path": "site/api/object-storage/serviceId/pic2.docx",
+                      "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                    }
+                  ],
+                  "guides": [
+                    {
+                      "id": 3,
+                      "title": "סטייג'",
+                      "content": "תוכן",
+                      "files": [
+                        {
+                          "file_path": "site/api/object-storage/id/pic.png",
+                          "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                        },
+                        {
+                          "file_path": "site/api/object-storage/serviceId/pic2.docx",
+                          "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              "description": "API docs successfully updated."
+            }
+          }
+        },
+        "delete": {
+          "parameters": [
+            {
+              "name": "Service Parameters",
+              "description": "the parameters in the body of the request.",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          ],
+          "description": "removes specific service",
+          "responses": {
+            "200": {
+              "description": "service deleted"
+            }
+          }
+        },
+        "post": {
+          "description": "creates service .",
+          "parameters": [
+            {
+              "name": "Api Parameters",
+              "description": "the parameters in the body of the request.",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "last_updated": {
+                    "type": "string"
+                  },
+                  "img": {
+                    "type": "string"
+                  },
+                  "description": {
+                    "type": "string"
+                  },
+                  "project_id": {
+                    "type": "integer"
+                  },
+                  "contacts": {
+                    "type": "object",
+                    "properties": {
+                      "dev_team": {
+                        "type": "object",
+                        "properties": {
+                          "military_phone": {
+                            "type": "string"
+                          },
+                          "civilain_phone": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "war_room_team": {
+                        "type": "object",
+                        "properties": {
+                          "military_phone": {
+                            "type": "string"
+                          },
+                          "civilain_phone": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "service_supervisor_id": {
+                        "type": "string"
+                      },
+                      "chat_url": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "tags": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer"
+                    }
+                  },
+                  "graphql": {
+                    "type": "string"
+                  },
+                  "swagger": {
+                    "type": "string"
+                  },
+                  "request_protocol": {
+                    "type": "string"
+                  },
+                  "release_notes": {
+                    "type": "string"
+                  },
+                  "views": {
+                    "type": "integer"
+                  },
+                  "load_rate": {
+                    "type": "integer"
+                  },
+                  "files": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "category": {
+                          "type": "string"
+                        },
+                        "display_name": {
+                          "type": "string"
+                        },
+                        "id": {
+                          "type": "integer"
+                        },
+                        "path": {
+                          "type": "string"
+                        },
+                        "fileDescription": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "example": {
+                  "name": "שם שירות",
+                  "last_updated": "string",
+                  "img": "דרך לתמונה",
+                  "id": 1,
+                  "description": "מידע על הסרביס ",
+                  "project_id": 4,
+                  "contacts": {
+                    "dev_team": {
+                      "military_phone": "0522236663",
+                      "civilain_phone": "0522236663"
+                    },
+                    "war_room_team": {
+                      "military_phone": "0522236663",
+                      "civilain_phone": "0522236663"
+                    },
+                    "service_supervisor_id": "t2364616",
+                    "chat_url": "url"
+                  },
+                  "tags": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "graphql": "null||url",
+                  "swagger": "null||url",
+                  "request_protocol": "B2B",
+                  "release_notes": "תוכן של מה חדש",
+                  "views": 3,
+                  "load_rate": 2000,
+                  "files": [
+                    {
+                      "file_path": "site/api/object-storage/id/pic.png",
+                      "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                    },
+                    {
+                      "file_path": "site/api/object-storage/id/pic.docx",
+                      "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                    }
+                  ]
+                }
+              },
+              "description": "API docs successfully updated."
+            }
+          }
+        }
+      },
+      "/services/{id}": {
+        "get": {
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of service to return",
+              "required": true,
+              "type": "integer"
+            }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "example": {
+                  "id": 1,
+                  "name": "שם שירות",
+                  "last_updated": "string",
+                  "img": "דרך לתמונה",
+                  "description": "מידע על הסרביס ",
+                  "contacts": {
+                    "dev_team": {
+                      "military_phone": "0522236663",
+                      "civilain_phone": "0522236663"
+                    },
+                    "war_room_team": {
+                      "military_phone": "0522236663",
+                      "civilain_phone": "0522236663"
+                    },
+                    "service_supervisor_id": "t2364616",
+                    "chat_url": "url"
+                  },
+                  "tags": [
+                    1,
+                    2,
+                    3
+                  ],
+                  "project_id": 4,
+                  "graphql": "null||url",
+                  "swagger": "null||url",
+                  "request_protocol": "B2B",
+                  "release_notes": "תוכן של מה חדש",
+                  "views": 3,
+                  "load_rate": 2000,
+                  "files": [
+                    {
+                      "file_path": "site/api/object-storage/id/pic.png",
+                      "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                    },
+                    {
+                      "file_path": "site/api/object-storage/id/pic.docx",
+                      "last_updated": "ISO \"2020-07-20T10:12:53.966Z\""
+                    }
+                  ],
+                  "guides": [
+                    {
+                      "id": 3,
+                      "title": "סטייג'",
+                      "content": "תוכן",
+                      "picture": "hash של תמונה"
+                    }
+                  ]
+                }
+              },
+              "description": "get service"
+            }
+          }
+        }
+      },
+      "/services/viewedByUser": {
+        "post": {
+          "description": "returns the services veiwed by a spesific user  .",
+          "parameters": [
+            {
+              "name": "Api Parameters",
+              "description": "the parameters in the body of the request.",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "userId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": " subscribed to service.",
+              "schema": {
+                "example": [
+                  {
+                    "name": "שם שירות",
+                    "last_updated": "string",
+                    "img": "דרך לתמונה",
+                    "id": 1,
+                    "description": "מידע על הסרביס ",
+                    "tags": [
+                      1,
+                      2,
+                      3
+                    ],
+                    "graphql": "null||url",
+                    "swagger": "null||url",
+                    "request_protocol": "B2B",
+                    "views": 3
+                  }
+                ]
+              }
+            },
+            "500": {
+              "description": " couldn't register to service."
+            }
+          }
+        }
+      },
+      "/subscription/validate": {
+        "post": {
+          "description": "validates a subscription to current service.",
+          "parameters": [
+            {
+              "name": "Api Parameters",
+              "description": "the parameters in the body of the request.",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "service_id": {
+                    "type": "integer"
+                  },
+                  "user_id": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "schema": {
+                "example": {
+                  "isSubscribed": true
+                }
+              },
+              "description": "it is validated and subscribed"
+            }
+          }
+        }
+      },
+      "/subscription/subscribe": {
+        "post": {
+          "description": "registers a subscriber to the service .",
+          "parameters": [
+            {
+              "name": "Api Parameters",
+              "description": "the parameters in the body of the request.",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "user_Id": {
+                    "type": "string"
+                  },
+                  "service_id": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": " subscribed to service."
+            },
+            "500": {
+              "description": " couldn't register to service."
+            }
+          }
+        }
+      },
+      "/subscription/unsubscribe": {
+        "post": {
+          "description": "removes a subscriber from the service .",
+          "parameters": [
+            {
+              "name": "Api Parameters",
+              "description": "the parameters in the body of the request.",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "user_Id": {
+                    "type": "string"
+                  },
+                  "service_id": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": " removed from service."
+            },
+            "500": {
+              "description": " couldn't remove from service."
+            }
+          }
+        }
+      },
+      "/files/upload": {
+        "post": {
+          "parameters": [
+            {
+              "name": "Api Parameters",
+              "description": "the parameters in the body of the request the file should be binary and type should be one of the following string for location guidens of file creation (guides:guide files ,assets:pics and videos not related to guides,docs:word ppt xls .....)",
+              "in": "body",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "file": {
+                    "type": "string",
+                    "description": "should be binary"
+                  },
+                  "project_id": {
+                    "type": "string",
+                    "description": "should have value if comes from project"
+                  },
+                  "service_id": {
+                    "type": "string",
+                    "description": "should have value if comes from service"
+                  },
+                  "type": {
+                    "type": "string",
+                    "description": "guides||assets||docs"
+                  }
+                }
+              }
+            }
+          ],
+          "description": "stores files in s3 and returns the hash of the file",
+          "responses": {
+            "200": {
+              "description": "path to s3 image by hash",
+              "schema": {
+                "example": {}
+              }
+            }
+          }
+        }
+      },
+      "/notifications/:userId": {
+        "get": {
+          "description": "gets notifications for specific",
+          "responses": {
+            "200": {
+              "description": "gets notifications for the user from the user id",
+              "schema": {
+                "example": [
+                  {
+                    "id": 1,
+                    "service_id": 5,
+                    "content": "סטטוס שירות ניהול משתמשים שונה מעתידי ומבצעי",
+                    "creation_date": "ISO \"2020-07-20T10:12:53.966Z\""
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "/notifications": {
+        "delete": {
+          "parameters": [
+            {
+              "name": "notifications Parameters",
+              "description": "the parameters in the body of the request.",
+              "in": "body",
+              "schema": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              }
+            }
+          ],
+          "description": "removes notifications",
+          "responses": {
+            "200": {
+              "description": "notifications deleted"
+            }
+          }
+        }
+      },
+      "/tags": {
+        "get": {
+          "parameters": [],
+          "description": "gets the tags from server",
+          "responses": {
+            "200": {
+              "description": "tags array",
+              "schema": {
+                "example": [
+                  {
+                    "id": 1,
+                    "value": "מידע"
+                  },
+                  {
+                    "id": 2,
+                    "value": "מאגרים"
+                  },
+                  {
+                    "id": 3,
+                    "value": "מזג אוויר"
+                  },
+                  {
+                    "id": 4,
+                    "value": "הזדהות"
+                  },
+                  {
+                    "id": 5,
+                    "value": "חישובים"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "/arms": {
+        "get": {
+          "parameters": [],
+          "description": "gets the arms from the server",
+          "responses": {
+            "200": {
+              "description": "arms array",
+              "schema": {
+                "example": [
+                  {
+                    "id": 1,
+                    "value": "אמ\"ן"
+                  },
+                  {
+                    "id": 2,
+                    "value": "חה\"א"
+                  },
+                  {
+                    "id": 3,
+                    "value": "חה\"י"
+                  },
+                  {
+                    "id": 4,
+                    "value": "חט\"ל"
+                  },
+                  {
+                    "id": 5,
+                    "value": "תקשוב"
+                  },
+                  {
+                    "id": 6,
+                    "value": "זרוע היבשה"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "/auth": {
+        "get": {
+          "parameters": [],
+          "description": "gets the user data from the server",
+          "responses": {
+            "200": {
+              "description": " you need to create a cookie with the folowing data . you need to create it manually to simulate the auth process being done by out server  { id : k93244623 , name : string , email : something@something.com , chat_url : chat.com/fsigbsidf}"
+            }
+          }
+        }
+      }
+    },
+    "host": "virtserver.swaggerhub.com",
+    "basePath": "/darkish1990/devZone/1.0",
+    "schemes": [
+      "https",
+      "http"
+    ]
+  }

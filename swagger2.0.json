@@ -31,7 +31,12 @@
                                         2,
                                         3
                                     ],
-                                    "numberOfServices": 3
+                                    "services": [
+                                        1,
+                                        2,
+                                        3,
+                                        4
+                                    ]
                                 }
                             ]
                         },
@@ -58,7 +63,18 @@
                 "description": "removes specific project",
                 "responses": {
                     "200": {
-                        "description": "project deleted"
+                        "description": "project deleted",
+                        "schema": {
+                            "example": {
+                                "id": 1,
+                                "services": [
+                                    1,
+                                    2,
+                                    3,
+                                    4
+                                ]
+                            }
+                        }
                     }
                 }
             },
@@ -84,12 +100,7 @@
                                 "contacts": {
                                     "type": "array",
                                     "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "id": {
-                                                "type": "string"
-                                            }
-                                        }
+                                        "type": "string"
                                     }
                                 },
                                 "name": {
@@ -262,6 +273,7 @@
                                         2,
                                         3
                                     ],
+                                    "project_id": 4,
                                     "graphql": "null||url",
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
@@ -284,9 +296,6 @@
                             "type": "object",
                             "properties": {
                                 "name": {
-                                    "type": "string"
-                                },
-                                "last_updated": {
                                     "type": "string"
                                 },
                                 "id": {
@@ -320,8 +329,19 @@
                                                 }
                                             }
                                         },
-                                        "service_supervisor_id": {
-                                            "type": "string"
+                                        "service_supervisor": {
+                                            "type": "object",
+                                            "properties": {
+                                                "military_phone": {
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "role": {
+                                                    "type": "string"
+                                                }
+                                            }
                                         },
                                         "chat_url": {
                                             "type": "string"
@@ -346,11 +366,39 @@
                                 "release_notes": {
                                     "type": "string"
                                 },
-                                "views": {
-                                    "type": "integer"
-                                },
                                 "load_rate": {
                                     "type": "integer"
+                                },
+                                "guides": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "content": {
+                                                "type": "string"
+                                            },
+                                            "files": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "file_path": {
+                                                            "type": "string"
+                                                        },
+                                                        "last_updated": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -375,7 +423,11 @@
                                         "military_phone": "0522236663",
                                         "civilain_phone": "0522236663"
                                     },
-                                    "service_supervisor_id": "t2364616",
+                                    "service_supervisor": {
+                                        "id": "t2364616",
+                                        "military_phone": "0522236663",
+                                        "role": "PM"
+                                    },
                                     "chat_url": "url"
                                 },
                                 "tags": [
@@ -495,8 +547,19 @@
                                                 }
                                             }
                                         },
-                                        "service_supervisor_id": {
-                                            "type": "string"
+                                        "service_supervisor": {
+                                            "type": "object",
+                                            "properties": {
+                                                "military_phone": {
+                                                    "type": "string"
+                                                },
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "role": {
+                                                    "type": "string"
+                                                }
+                                            }
                                         },
                                         "chat_url": {
                                             "type": "string"
@@ -573,7 +636,11 @@
                                         "military_phone": "0522236663",
                                         "civilain_phone": "0522236663"
                                     },
-                                    "service_supervisor_id": "t2364616",
+                                    "service_supervisor": {
+                                        "id": "t2364616",
+                                        "military_phone": "0522236663",
+                                        "role": "PM"
+                                    },
                                     "chat_url": "url"
                                 },
                                 "tags": [
@@ -633,7 +700,11 @@
                                         "military_phone": "0522236663",
                                         "civilain_phone": "0522236663"
                                     },
-                                    "service_supervisor_id": "t2364616",
+                                    "service_supervisor": {
+                                        "id": "t2364616",
+                                        "military_phone": "0522236663",
+                                        "role": "PM"
+                                    },
                                     "chat_url": "url"
                                 },
                                 "tags": [
@@ -784,6 +855,37 @@
                     },
                     "500": {
                         "description": " couldn't register to service."
+                    }
+                }
+            }
+        },
+        "/subscription/unsubscribe": {
+            "post": {
+                "description": "removes a subscriber from the service .",
+                "parameters": [
+                    {
+                        "name": "Api Parameters",
+                        "description": "the parameters in the body of the request.",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "user_Id": {
+                                    "type": "string"
+                                },
+                                "service_id": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": " removed from service."
+                    },
+                    "500": {
+                        "description": " couldn't remove from service."
                     }
                 }
             }
@@ -978,12 +1080,7 @@
                 "description": "gets the user data from the server",
                 "responses": {
                     "200": {
-                        "description": " you need to create a cookie with a userId for example k4935858. you need to create it manually to simulate the auth process being done by out server",
-                        "schema": {
-                            "example": {
-                                "redirect_url": "site.com/afterauth"
-                            }
-                        }
+                        "description": " you need to create a cookie with the folowing data . you need to create it manually to simulate the auth process being done by out server  { id : k93244623 , name : string , email : something@something.com , chat_url : chat.com/fsigbsidf}"
                     }
                 }
             }
