@@ -236,7 +236,7 @@
                                     {
                                         "id": 1,
                                         "name": "שם שירות",
-                                        "service_img": "site/api/object-storage/serviceId/pic.png",
+                                        "img": "site/api/object-storage/serviceId/pic.png",
                                         "description": "מידע על הסרביס ",
                                         "tags": [
                                             1,
@@ -744,90 +744,6 @@
                 }
             }
         },
-        "/services/viewedByUser": {
-            "post": {
-                "description": "returns the services veiwed by a spesific user  .",
-                "parameters": [
-                    {
-                        "name": "Api Parameters",
-                        "description": "the parameters in the body of the request.",
-                        "in": "body",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "userId": {
-                                    "type": "string"
-                                },
-                                "serviceId": {
-                                    "type": "integer"
-                                }
-                            }
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": " subscribed to service.",
-                        "schema": {
-                            "example": [
-                                {
-                                    "name": "שם שירות",
-                                    "last_updated": "string",
-                                    "img": "דרך לתמונה",
-                                    "id": 1,
-                                    "description": "מידע על הסרביס ",
-                                    "tags": [
-                                        1,
-                                        2,
-                                        3
-                                    ],
-                                    "graphql": "null||url",
-                                    "swagger": "null||url",
-                                    "request_protocol": "B2B",
-                                    "views": 3
-                                }
-                            ]
-                        }
-                    },
-                    "500": {
-                        "description": " couldn't register to service."
-                    }
-                }
-            }
-        },
-        "/subscription/validate": {
-            "post": {
-                "description": "validates a subscription to current service.",
-                "parameters": [
-                    {
-                        "name": "Api Parameters",
-                        "description": "the parameters in the body of the request.",
-                        "in": "body",
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "service_id": {
-                                    "type": "integer"
-                                },
-                                "user_id": {
-                                    "type": "string"
-                                }
-                            }
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "schema": {
-                            "example": {
-                                "isSubscribed": true
-                            }
-                        },
-                        "description": "it is validated and subscribed"
-                    }
-                }
-            }
-        },
         "/subscription/register": {
             "post": {
                 "description": "registers a subscriber to the service .",
@@ -839,9 +755,6 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "user_Id": {
-                                    "type": "string"
-                                },
                                 "service_id": {
                                     "type": "integer"
                                 }
@@ -851,7 +764,12 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": " subscribed to service."
+                        "description": " subscribed to service.",
+                        "schema": {
+                            "example": {
+                                "service_id": "453455638"
+                            }
+                        }
                     },
                     "500": {
                         "description": " couldn't register to service."
@@ -870,9 +788,6 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "user_Id": {
-                                    "type": "string"
-                                },
                                 "service_id": {
                                     "type": "integer"
                                 }
@@ -882,7 +797,12 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": " removed from service."
+                        "description": " removed from service.",
+                        "schema": {
+                            "example": {
+                                "service_id": "453455638"
+                            }
+                        }
                     },
                     "500": {
                         "description": " couldn't remove from service."
@@ -931,18 +851,10 @@
                 }
             }
         },
-        "/user/:{id}": {
+        "/user": {
             "get": {
                 "description": "gets user name from id",
-                "parameters": [
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "ID of user to return",
-                        "required": true,
-                        "type": "integer"
-                    }
-                ],
+                "parameters": [],
                 "responses": {
                     "200": {
                         "description": "gets the user data from id",
@@ -952,26 +864,6 @@
                                 "email": "something@something.com",
                                 "chat_url": "chat.com/fsigbsidf"
                             }
-                        }
-                    }
-                }
-            }
-        },
-        "/notifications/:userId": {
-            "get": {
-                "description": "gets notifications for specific",
-                "responses": {
-                    "200": {
-                        "description": "gets notifications for the user from the user id",
-                        "schema": {
-                            "example": [
-                                {
-                                    "id": 1,
-                                    "service_id": 5,
-                                    "content": "סטטוס שירות ניהול משתמשים שונה מעתידי ומבצעי",
-                                    "creation_date": "ISO \"2020-07-20T10:12:53.966Z\""
-                                }
-                            ]
                         }
                     }
                 }
@@ -995,7 +887,14 @@
                 "description": "removes notifications",
                 "responses": {
                     "200": {
-                        "description": "notifications deleted"
+                        "description": "notifications deleted",
+                        "schema": {
+                            "example": [
+                                1,
+                                2,
+                                3
+                            ]
+                        }
                     }
                 }
             }
@@ -1081,6 +980,34 @@
                 "responses": {
                     "200": {
                         "description": " you need to create a cookie with the folowing data . you need to create it manually to simulate the auth process being done by out server  { id : k93244623 , name : string , email : something@something.com , chat_url : chat.com/fsigbsidf}"
+                    }
+                }
+            }
+        },
+        "/WhoAmI": {
+            "get": {
+                "description": "gets user data from id",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "gets the user data from id",
+                        "schema": {
+                            "example": {
+                                "name": "string",
+                                "email": "something@something.com",
+                                "chat_url": "chat.com/fsigbsidf",
+                                "viewed_services": [
+                                    1,
+                                    2,
+                                    3,
+                                    4
+                                ],
+                                "subscribed_services": [
+                                    1,
+                                    2
+                                ]
+                            }
+                        }
                     }
                 }
             }
