@@ -933,7 +933,7 @@
                 }
             }
         },
-        "/WhoAmI": {
+        "/whoAmI": {
             "get": {
                 "description": "gets user data from id",
                 "parameters": [],
