@@ -4,12 +4,6 @@
         "version": "1.0",
         "description": "Where you can find api documentation for all operational services."
     },
-    "host": "site.com",
-    "schemes": [
-        "http",
-        "https"
-    ],
-    "basePath": "/api",
     "swagger": "2.0",
     "paths": {
         "/projects": {
@@ -22,21 +16,58 @@
                                 {
                                     "id": 1,
                                     "arm": 4,
-                                    "name": "שם הפרויקט",
-                                    "img": "site/api/object-storage/id/pic.png",
-                                    "description": "מידע על הפרויקט ",
-                                    "views": 3,
+                                    "name": "Google",
+                                    "img": "GoogleLogo.png",
+                                    "description": "מנוע החיפוש הטוב ביותר ברשת השחורה",
                                     "tags": [
                                         1,
-                                        2,
-                                        3
+                                        2
                                     ],
                                     "services": [
                                         1,
-                                        2,
+                                        2
+                                    ]
+                                },
+                                {
+                                    "id": 2,
+                                    "arm": 2,
+                                    "name": "ארמון החול",
+                                    "img": "CastleLogo.png",
+                                    "description": "מערכת ארמון החול היא מערכת שליטה מרכזית בחופי הים",
+                                    "tags": [
+                                        1,
                                         3,
+                                        5
+                                    ],
+                                    "services": [
+                                        3
+                                    ]
+                                },
+                                {
+                                    "id": 3,
+                                    "arm": 3,
+                                    "name": "גב האומה",
+                                    "img": "MapsLogo.png",
+                                    "description": "שירותי מיפוי",
+                                    "tags": [
+                                        2,
+                                        4
+                                    ],
+                                    "services": [
                                         4
                                     ]
+                                },
+                                {
+                                    "id": 4,
+                                    "arm": 1,
+                                    "name": "מאגר רכבים",
+                                    "img": "CarsLogo.png",
+                                    "description": "מאגר רכבים, מנגיש את כלל הרכבים הפעילים והארכיונים ומאפשר ביצוע סינון לפי חתכים שונים",
+                                    "tags": [
+                                        2,
+                                        1
+                                    ],
+                                    "services": null
                                 }
                             ]
                         },
@@ -44,9 +75,8 @@
                     }
                 }
             },
-            
             "post": {
-                "description": "creates project .",
+                "description": "Creates project",
                 "parameters": [
                     {
                         "name": "Api Parameters",
@@ -68,7 +98,21 @@
                                 "contacts": {
                                     "type": "array",
                                     "items": {
-                                        "type": "string"
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "type": "string"
+                                            },
+                                            "chat_url": {
+                                                "type": "string"
+                                            }
+                                        }
                                     }
                                 },
                                 "name": {
@@ -88,23 +132,36 @@
                     "200": {
                         "schema": {
                             "example": {
-                                "arm": 5,
-                                "name": "שם הפרויקט",
-                                "img": "site/api/object-storage/id/pic.png",
-                                "id": 1,
-                                "description": "מידע על הפרויקט ",
+                                "id": 2,
+                                "arm": 2,
+                                "name": "ארמון החול",
+                                "img": "CastleLogo.png",
+                                "description": "מערכת ארמון החול היא מערכת שליטה מרכזית בחופי הים",
                                 "contacts": [
-                                    "k943787263",
-                                    "k943787983"
+                                    {
+                                        "id": "k1111111",
+                                        "name": "ענבל היפש",
+                                        "email": "k1111111@idf",
+                                        "chat_url": "https://chat/k1111111"
+                                    },
+                                    {
+                                        "id": "k4444444",
+                                        "name": "רועי ליבה",
+                                        "email": "k4444444@idf",
+                                        "chat_url": "https://chat/k4444444"
+                                    }
                                 ],
                                 "tags": [
                                     1,
-                                    2,
+                                    3,
+                                    5
+                                ],
+                                "services": [
                                     3
                                 ]
                             }
                         },
-                        "description": "project created successfully ."
+                        "description": "Project created successfully."
                     }
                 }
             }
@@ -125,27 +182,36 @@
                     "200": {
                         "schema": {
                             "example": {
-                                "arm": 3,
-                                "id": 1,
-                                "name": "שם הפרויקט",
-                                "img": "site/api/object-storage/id/pic.png",
-                                "description": "מידע על הפרויקט ",
+                                "id": 2,
+                                "arm": 2,
+                                "name": "ארמון החול",
+                                "img": "CastleLogo.png",
+                                "description": "מערכת ארמון החול היא מערכת שליטה מרכזית בחופי הים",
+                                "contacts": [
+                                    {
+                                        "id": "k1111111",
+                                        "name": "ענבל היפש",
+                                        "email": "k1111111@idf",
+                                        "chat_url": "https://chat/k1111111"
+                                    },
+                                    {
+                                        "id": "k4444444",
+                                        "name": "רועי ליבה",
+                                        "email": "k4444444@idf",
+                                        "chat_url": "https://chat/k4444444"
+                                    }
+                                ],
                                 "tags": [
                                     1,
-                                    2,
-                                    3
-                                ],
-                                "contacts": [
-                                    "k943787263"
+                                    3,
+                                    5
                                 ],
                                 "services": [
-                                    1,
-                                    2,
                                     3
                                 ]
                             }
                         },
-                        "description": "got project"
+                        "description": "Get a specific project."
                     }
                 }
             },
@@ -159,10 +225,10 @@
                         "type": "integer"
                     }
                 ],
-                "description": "removes specific project",
+                "description": "Removes a specific project.",
                 "responses": {
                     "200": {
-                        "description": "project deleted",
+                        "description": "Project deleted.",
                         "schema": {
                             "example": {
                                 "id": 1,
@@ -179,13 +245,14 @@
             },
             "put": {
                 "description": "Updates api docs on specific project.",
-                "parameters": [ {
-                    "name": "id",
-                    "in": "path",
-                    "description": "ID of service to return",
-                    "required": true,
-                    "type": "integer"
-                },
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of service to return",
+                        "required": true,
+                        "type": "integer"
+                    },
                     {
                         "name": "Api Parameters",
                         "description": "the parameters in the body of the request.",
@@ -193,7 +260,6 @@
                         "schema": {
                             "type": "object",
                             "properties": {
-                                
                                 "arm": {
                                     "type": "integer"
                                 },
@@ -206,7 +272,21 @@
                                 "contacts": {
                                     "type": "array",
                                     "items": {
-                                        "type": "string"
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "type": "string"
+                                            },
+                                            "chat_url": {
+                                                "type": "string"
+                                            }
+                                        }
                                     }
                                 },
                                 "name": {
@@ -226,25 +306,36 @@
                     "200": {
                         "schema": {
                             "example": {
-                                "arm": 3,
-                                "id": 1,
-                                "name": "שם הפרויקט",
-                                "img": "site/api/object-storage/id/pic.png",
-                                "description": "מידע על הפרויקט ",
+                                "id": 2,
+                                "arm": 2,
+                                "name": "ארמון החול",
+                                "img": "CastleLogo.png",
+                                "description": "מערכת ארמון החול היא מערכת שליטה מרכזית בחופי הים",
+                                "contacts": [
+                                    {
+                                        "id": "k1111111",
+                                        "name": "ענבל היפש",
+                                        "email": "k1111111@idf",
+                                        "chat_url": "https://chat/k1111111"
+                                    },
+                                    {
+                                        "id": "k4444444",
+                                        "name": "רועי ליבה",
+                                        "email": "k4444444@idf",
+                                        "chat_url": "https://chat/k4444444"
+                                    }
+                                ],
                                 "tags": [
                                     1,
-                                    2,
-                                    3
-                                ],
-                                "contacts": [
-                                    "k943787263"
+                                    3,
+                                    5
                                 ]
                             }
                         },
-                        "description": "project successfully updated."
+                        "description": "Project successfully updated."
                     }
                 }
-            },
+            }
         },
         "/services": {
             "get": {
@@ -253,17 +344,66 @@
                         "schema": {
                             "example": [
                                 {
-                                    "name": "שם שירות",
-                                    "last_updated": "string",
-                                    "img": "דרך לתמונה",
                                     "id": 1,
-                                    "description": "מידע על הסרביס ",
+                                    "name": "חיפוש",
+                                    "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                    "img": "דרך לתמונה",
+                                    "description": "חיפוש דפי אינטרנט ברשת השחורה",
                                     "tags": [
                                         1,
                                         2,
                                         3
                                     ],
-                                    "project_id": 4,
+                                    "project_id": 1,
+                                    "graphql": "null||url",
+                                    "swagger": "null||url",
+                                    "request_protocol": "B2B",
+                                    "views": 20
+                                },
+                                {
+                                    "id": 2,
+                                    "name": "חיפוש גיאוגרפי",
+                                    "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                    "img": "דרך לתמונה",
+                                    "description": "חיפוש דפי אינטרנט ברשת השחורה",
+                                    "tags": [
+                                        1,
+                                        2,
+                                        3
+                                    ],
+                                    "project_id": 1,
+                                    "graphql": "null||url",
+                                    "swagger": "null||url",
+                                    "request_protocol": "B2B",
+                                    "views": 167
+                                },
+                                {
+                                    "id": 3,
+                                    "name": "גובה הגלים",
+                                    "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                    "img": "WavesLogo.jpg",
+                                    "description": "הנגשת נתוני גלים מארמון החול",
+                                    "tags": [
+                                        1,
+                                        3
+                                    ],
+                                    "project_id": 2,
+                                    "graphql": "null||url",
+                                    "swagger": "null||url",
+                                    "request_protocol": "B2C",
+                                    "views": 33
+                                },
+                                {
+                                    "id": 4,
+                                    "name": "מפות",
+                                    "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                    "img": "WavesLogo.jpg",
+                                    "description": "שירות המיפוי",
+                                    "tags": [
+                                        2,
+                                        4
+                                    ],
+                                    "project_id": 3,
                                     "graphql": "null||url",
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
@@ -275,9 +415,8 @@
                     }
                 }
             },
-            
             "post": {
-                "description": "creates service .",
+                "description": "Creates service.",
                 "parameters": [
                     {
                         "name": "Api Parameters",
@@ -287,6 +426,9 @@
                             "type": "object",
                             "properties": {
                                 "name": {
+                                    "type": "string"
+                                },
+                                "status": {
                                     "type": "string"
                                 },
                                 "last_updated": {
@@ -312,6 +454,9 @@
                                                 },
                                                 "civilain_phone": {
                                                     "type": "string"
+                                                },
+                                                "chat_url": {
+                                                    "type": "string"
                                                 }
                                             }
                                         },
@@ -329,7 +474,7 @@
                                         "service_supervisor": {
                                             "type": "object",
                                             "properties": {
-                                                "military_phone": {
+                                                "phone": {
                                                     "type": "string"
                                                 },
                                                 "id": {
@@ -337,12 +482,19 @@
                                                 },
                                                 "role": {
                                                     "type": "string"
+                                                },
+                                                "chat_url": {
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "email": {
+                                                    "type": "string"
                                                 }
                                             }
-                                        },
-                                        "chat_url": {
-                                            "type": "string"
                                         }
+                                        
                                     }
                                 },
                                 "tags": {
@@ -369,11 +521,14 @@
                                 "load_rate": {
                                     "type": "integer"
                                 },
-                                "files": {
+                                "extra_reading_files": {
                                     "type": "array",
                                     "items": {
                                         "type": "object",
                                         "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            },
                                             "path": {
                                                 "type": "string"
                                             },
@@ -383,7 +538,27 @@
                                             "description": {
                                                 "type": "string"
                                             },
-                                            "type": {
+                                            "date_modified": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "help_files": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "path": {
+                                                "type": "string"
+                                            },
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "description": {
                                                 "type": "string"
                                             },
                                             "date_modified": {
@@ -400,48 +575,72 @@
                     "200": {
                         "schema": {
                             "example": {
-                                "name": "שם שירות",
-                                "last_updated": "string",
-                                "img": "דרך לתמונה",
-                                "id": 1,
-                                "description": "מידע על הסרביס ",
-                                "project_id": 4,
+                                "id": 3,
+                                "name": "גובה הגלים",
+                                "status": "active",
+                                "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                "img": "WavesLogo.jpg",
+                                "description": "הנגשת נתוני גלים מארמון החול",
+                                "tags": [
+                                    1,
+                                    3
+                                ],
+                                "project_id": 2,
+                                "graphql": "null||url",
+                                "swagger": "null||url",
+                                "request_protocol": "B2C",
+                                "views": 33,
                                 "contacts": {
                                     "dev_team": {
-                                        "military_phone": "0522236663",
-                                        "civilain_phone": "0522236663"
+                                        "military_phone": "0522236661",
+                                        "civilain_phone": "0522236662",
+                                        "chat_url": "https://chat/a%asdad%%sdgasdfjweof"
                                     },
                                     "war_room_team": {
                                         "military_phone": "0522236663",
-                                        "civilain_phone": "0522236663"
+                                        "civilain_phone": "0522236664"
                                     },
                                     "service_supervisor": {
-                                        "id": "t2364616",
-                                        "military_phone": "0522236663",
-                                        "role": "PM"
-                                    },
-                                    "chat_url": "url"
-                                },
-                                "tags": [
-                                    1,
-                                    2,
-                                    3
-                                ],
-                                "graphql": "null||url",
-                                "swagger": "null||url",
-                                "request_protocol": "B2B",
-                                "release_notes": "תוכן של מה חדש",
-                                "views": 3,
-                                "load_rate": 2000,
-                                "files": [
-                                    {
-                                        "path": "site/api/object-storage/id/pic.png",
-                                        "title": "תיק איפיון",
-                                        "description": "הסבר",
-                                        "type": "ppt",
-                                        "date_modified": "ISO \"2020-07-20T10:12:53.966Z\""
+                                        "id": "k1111111",
+                                        "chat_url": "https://chat/k1111111",
+                                        "phone": "0522236665",
+                                        "role": "מנהלת מוצר",
+                                        "name": "ענבל היפש",
+                                        "email": "k1111111@idf"
                                     }
-                                ]
+                                },
+                                "load_rate": 2000,
+                                "extra_reading_files": [
+                                    {
+                                        "id": "1",
+                                        "path": "TikIfiun.docx",
+                                        "title": "תיק אפיון",
+                                        "description": "תיק האפיון המפורט של המערכת",
+                                        "date_modified": "ISO \"2020-07-20T10:12:53.966Z\""
+                                    },
+                                    {
+                                        "id": "2",
+                                        "path": "TikNitur.docx",
+                                        "title": "תיק ניטור",
+                                        "description": "תיק ניטור על פי תקן חמ\"ל",
+                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                    },
+                                    {
+                                        "id": "3",
+                                        "path": "Architecture.ppt",
+                                        "title": "ארכיטקטורה",
+                                        "description": "סביבת Prod",
+                                        "date_modified": "ISO \"2019-05-14T10:50:53.966Z\""
+                                    },
+                                    {
+                                        "id": "4",
+                                        "path": "Omasim.pdf",
+                                        "title": "בדיקת עומסים",
+                                        "description": "תוצאות בדיקות עומסים לשירות גובה הגלים",
+                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                    }
+                                ],
+                                "help_files": []
                             }
                         },
                         "description": "API docs successfully updated."
@@ -464,59 +663,92 @@
                     "200": {
                         "schema": {
                             "example": {
-                                "id": 1,
-                                "name": "שם שירות",
-                                "last_updated": "string",
-                                "img": "דרך לתמונה",
-                                "description": "מידע על הסרביס ",
+                                "id": 3,
+                                "name": "גובה הגלים",
+                                "status": "active",
+                                "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                "img": "WavesLogo.jpg",
+                                "description": "הנגשת נתוני גלים מארמון החול",
+                                "tags": [
+                                    1,
+                                    3
+                                ],
+                                "project_id": 2,
+                                "graphql": "null||url",
+                                "swagger": "null||url",
+                                "request_protocol": "B2C",
+                                "views": 33,
                                 "contacts": {
                                     "dev_team": {
-                                        "military_phone": "0522236663",
-                                        "civilain_phone": "0522236663"
+                                        "military_phone": "0522236661",
+                                        "civilain_phone": "0522236662",
+                                        "chat_url": "https://chat/a%asdad%%sdgasdfjweof"
                                     },
                                     "war_room_team": {
                                         "military_phone": "0522236663",
-                                        "civilain_phone": "0522236663"
+                                        "civilain_phone": "0522236664"
                                     },
                                     "service_supervisor": {
-                                        "id": "t2364616",
-                                        "military_phone": "0522236663",
-                                        "role": "PM"
-                                    },
-                                    "chat_url": "url"
+                                        "id": "k1111111",
+                                        "chat_url": "https://chat/k1111111",
+                                        "phone": "0522236665",
+                                        "role": "מנהלת מוצר",
+                                        "name": "ענבל היפש",
+                                        "email": "k1111111@idf"
+                                    }
                                 },
-                                "tags": [
-                                    1,
-                                    2,
-                                    3
-                                ],
-                                "project_id": 4,
-                                "graphql": "null||url",
-                                "swagger": "null||url",
-                                "request_protocol": "B2B",
-                                "release_notes": "תוכן של מה חדש",
-                                "views": 3,
+                                "release_notes": "בגרסה האחרונה נוספו פרמטרים חדשים למדידת גובה הגלים בקריאת ה-api. הטקסט הזה צריך להיות בפורמט של Markdown",
                                 "load_rate": 2000,
-                                "files": [
+                                "extra_reading_files": [
                                     {
-                                        "path": "site/api/object-storage/id/pic.png",
-                                        "title": "תיק איפיון",
-                                        "description": "הסבר",
-                                        "type": "ppt",
+                                        "id": "1",
+                                        "path": "TikIfiun.docx",
+                                        "title": "תיק אפיון",
+                                        "description": "תיק האפיון המפורט של המערכת",
                                         "date_modified": "ISO \"2020-07-20T10:12:53.966Z\""
+                                    },
+                                    {
+                                        "id": "2",
+                                        "path": "TikNitur.docx",
+                                        "title": "תיק ניטור",
+                                        "description": "תיק ניטור על פי תקן חמ\"ל",
+                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                    },
+                                    {
+                                        "id": "3",
+                                        "path": "Architecture.ppt",
+                                        "title": "ארכיטקטורה",
+                                        "description": "סביבת Prod",
+                                        "date_modified": "ISO \"2019-05-14T10:50:53.966Z\""
+                                    },
+                                    {
+                                        "id": "4",
+                                        "path": "Omasim.pdf",
+                                        "title": "בדיקת עומסים",
+                                        "description": "תוצאות בדיקות עומסים לשירות גובה הגלים",
+                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                    }
+                                ],
+                                "help_files" : [
+                                    {
+                                        "id": "6",
+                                        "path": "WavesTadmit.jpg",
+                                        "title": null,
+                                        "description": null,
+                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
                                     }
                                 ],
                                 "guides": [
                                     {
-                                        "id": 3,
-                                        "title": "סטייג'",
-                                        "content": "תוכן",
-                                        "img": "site/api/object-storage/id/pic.png"
+                                        "id": 1,
+                                        "title": "איך להתממשק לשירות?",
+                                        "content": "גם זה צריך להיות בMarkdown. כאן יהיה הסבר יחסית ארוך לגבי התממשקות לשירות שלנו. כנראה שתצטרכו להוסיף קבצים מסוימים, שימו לב לצילום המסך המצורף והיעזרו בו.",
+                                        "img": "Guide.png"
                                     }
                                 ]
                             }
                         },
-                        "description": "get service"
+                        "description": "Get service"
                     }
                 }
             },
@@ -540,6 +772,9 @@
                                 "name": {
                                     "type": "string"
                                 },
+                                "status": {
+                                    "type": "string"
+                                },
                                 "description": {
                                     "type": "string"
                                 },
@@ -553,6 +788,9 @@
                                                     "type": "string"
                                                 },
                                                 "civilain_phone": {
+                                                    "type": "string"
+                                                },
+                                                "chat_url": {
                                                     "type": "string"
                                                 }
                                             }
@@ -571,7 +809,7 @@
                                         "service_supervisor": {
                                             "type": "object",
                                             "properties": {
-                                                "military_phone": {
+                                                "phone": {
                                                     "type": "string"
                                                 },
                                                 "id": {
@@ -579,12 +817,19 @@
                                                 },
                                                 "role": {
                                                     "type": "string"
+                                                },
+                                                "chat_url": {
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "email": {
+                                                    "type": "string"
                                                 }
                                             }
-                                        },
-                                        "chat_url": {
-                                            "type": "string"
                                         }
+                                        
                                     }
                                 },
                                 "tags": {
@@ -608,11 +853,14 @@
                                 "load_rate": {
                                     "type": "integer"
                                 },
-                                "files": {
+                                "extra_reading_files": {
                                     "type": "array",
                                     "items": {
                                         "type": "object",
                                         "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            },
                                             "path": {
                                                 "type": "string"
                                             },
@@ -622,7 +870,27 @@
                                             "description": {
                                                 "type": "string"
                                             },
-                                            "type": {
+                                            "date_modified": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "help_files": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "string"
+                                            },
+                                            "path": {
+                                                "type": "string"
+                                            },
+                                            "title": {
+                                                "type": "string"
+                                            },
+                                            "description": {
                                                 "type": "string"
                                             },
                                             "date_modified": {
@@ -659,54 +927,102 @@
                     "200": {
                         "schema": {
                             "example": {
-                                "name": "שם שירות",
-                                "last_updated": "string",
-                                "img": "דרך לתמונה",
-                                "id": 1,
-                                "description": "מידע על הסרביס ",
-                                "project_id": 4,
+                                "id": 3,
+                                "name": "גובה הגלים",
+                                "status": "active",
+                                "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                "img": "WavesLogo.jpg",
+                                "description": "הנגשת נתוני גלים מארמון החול",
+                                "tags": [
+                                    1,
+                                    3
+                                ],
+                                "project_id": 2,
+                                "graphql": "null||url",
+                                "swagger": "null||url",
+                                "request_protocol": "B2C",
+                                "views": 33,
                                 "contacts": {
                                     "dev_team": {
-                                        "military_phone": "0522236663",
-                                        "civilain_phone": "0522236663"
+                                        "military_phone": "0522236661",
+                                        "civilain_phone": "0522236662",
+                                        "chat_url": "https://chat/a%asdad%%sdgasdfjweof"
                                     },
                                     "war_room_team": {
                                         "military_phone": "0522236663",
-                                        "civilain_phone": "0522236663"
+                                        "civilain_phone": "0522236664"
                                     },
                                     "service_supervisor": {
-                                        "id": "t2364616",
-                                        "military_phone": "0522236663",
-                                        "role": "PM"
-                                    },
-                                    "chat_url": "url"
+                                        "id": "k1111111",
+                                        "chat_url": "https://chat/k1111111",
+                                        "phone": "0522236665",
+                                        "role": "מנהלת מוצר",
+                                        "name": "ענבל היפש",
+                                        "email": "k1111111@idf"
+                                    }
                                 },
-                                "tags": [
-                                    1,
-                                    2,
-                                    3
-                                ],
-                                "graphql": "null||url",
-                                "swagger": "null||url",
-                                "request_protocol": "B2B",
-                                "release_notes": "תוכן של מה חדש",
-                                "views": 3,
+                                "release_notes": "בגרסה האחרונה נוספו פרמטרים חדשים למדידת גובה הגלים בקריאת ה-api. הטקסט הזה צריך להיות בפורמט של Markdown",
                                 "load_rate": 2000,
-                                "files": [
+                                "extra_reading_files": [
                                     {
-                                        "path": "site/api/object-storage/id/pic.png",
-                                        "title": "תיק איפיון",
-                                        "description": "הסבר",
-                                        "type": "ppt",
+                                        "id": "1",
+                                        "path": "TikIfiun.docx",
+                                        "title": "תיק אפיון",
+                                        "description": "תיק האפיון המפורט של המערכת",
                                         "date_modified": "ISO \"2020-07-20T10:12:53.966Z\""
+                                    },
+                                    {
+                                        "id": "2",
+                                        "path": "TikNitur.docx",
+                                        "title": "תיק ניטור",
+                                        "description": "תיק ניטור על פי תקן חמ\"ל",
+                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                    },
+                                    {
+                                        "id": "3",
+                                        "path": "Architecture.ppt",
+                                        "title": "ארכיטקטורה",
+                                        "description": "סביבת Prod",
+                                        "date_modified": "ISO \"2019-05-14T10:50:53.966Z\""
+                                    },
+                                    {
+                                        "id": "4",
+                                        "path": "Omasim.pdf",
+                                        "title": "בדיקת עומסים",
+                                        "description": "תוצאות בדיקות עומסים לשירות גובה הגלים",
+                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                    },
+                                    {
+                                        "id": "5",
+                                        "path": "Omasim.pdf",
+                                        "title": "בדיקת עומסים",
+                                        "description": "תוצאות בדיקות עומסים לשירות גובה הגלים",
+                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                    }
+                                    
+                                ],
+                                "help_files": [
+                                    {
+                                        "id": "6",
+                                        "path": "WavesTadmit.jpg",
+                                        "title": null,
+                                        "description": null,
+                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                    },
+                                    {
+                                        "id": "7",
+                                        "path": "WavesTadmit.jpg",
+                                        "title": null,
+                                        "description": null,
+                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
                                     }
                                 ],
                                 "guides": [
                                     {
-                                        "id": 3,
-                                        "title": "סטייג'",
-                                        "content": "תוכן",
-                                        "img": "site/api/object-storage/id/pic.png"
+                                        "id": 1,
+                                        "title": "איך להתממשק לשירות?",
+                                        "content": "גם זה צריך להיות בMarkdown. כאן יהיה הסבר יחסית ארוך לגבי התממשקות לשירות שלנו. כנראה שתצטרכו להוסיף קבצים מסוימים, שימו לב לצילום המסך המצורף והיעזרו בו.",
+                                        "img": "Guide.png"
                                     }
                                 ]
                             }
@@ -724,19 +1040,18 @@
                         "required": true,
                         "type": "integer"
                     }
-                
                 ],
-                "description": "removes specific service",
+                "description": "Removes a specific service",
                 "responses": {
                     "200": {
-                        "description": "service deleted"
+                        "description": "Service deleted"
                     }
                 }
             }
         },
         "/subscription/register": {
             "post": {
-                "description": "registers a subscriber to the service .",
+                "description": "Registers a new subscriber to the service.",
                 "parameters": [
                     {
                         "name": "Api Parameters",
@@ -754,22 +1069,22 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": " subscribed to service.",
+                        "description": "Subscribed to service.",
                         "schema": {
                             "example": {
-                                "service_id": "453455638"
+                                "service_id": "2"
                             }
                         }
                     },
                     "500": {
-                        "description": " couldn't register to service."
+                        "description": "Couldn't register to service."
                     }
                 }
             }
         },
         "/subscription/unsubscribe": {
             "post": {
-                "description": "removes a subscriber from the service .",
+                "description": "Removes a subscriber from the service.",
                 "parameters": [
                     {
                         "name": "Api Parameters",
@@ -787,7 +1102,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": " removed from service.",
+                        "description": "Removed from service.",
                         "schema": {
                             "example": {
                                 "service_id": "453455638"
@@ -795,15 +1110,23 @@
                         }
                     },
                     "500": {
-                        "description": " couldn't remove from service."
+                        "description": "Couldn't remove from service."
                     }
                 }
             }
         },
-        "/user": {
+        "/user/{id}": {
             "get": {
-                "description": "gets user name from id",
-                "parameters": [],
+                "description": "Gets user name from id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the user to return",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "gets the user data from id",
@@ -876,6 +1199,10 @@
                                 {
                                     "id": 5,
                                     "value": "חישובים"
+                                },
+                                {
+                                    "id": 6,
+                                    "value": "מיפוי"
                                 }
                             ]
                         }
@@ -928,7 +1255,38 @@
                 "description": "gets the user data from the server",
                 "responses": {
                     "200": {
-                        "description": " you need to create a cookie with the folowing data . you need to create it manually to simulate the auth process being done by out server  { id : k93244623 , name : string , email : something@something.com , chat_url : chat.com/fsigbsidf}"
+                        "description": "you need to create a cookie with the folowing data. you need to create it manually to simulate the auth process being done by out server  { id : k93244623 , name : string , email : something@something.com , chat_url : chat.com/fsigbsidf}"
+                    }
+                }
+            }
+        },
+        "/file/upload": {
+            "post": {
+                "parameters": [
+                    {
+                        "name": "Api Parameters",
+                        "description": "the parameters in the body of the request.",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "file": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "description": "Uploads a file",
+                "responses": {
+                    "200": {
+                        "description": "the file, and the id",
+                        "schema": {
+                            "example": {
+                                "file": "binery",
+                                "id": "1"
+                            }
+                        }
                     }
                 }
             }
@@ -939,13 +1297,10 @@
                 "parameters": [],
                 "responses": {
                     "200": {
-                        "description": "gets the user data from id",
+                        "description": "gets the user data",
                         "schema": {
                             "example": {
-                                "name": "string",
-                                "email": "something@something.com",
-                                "chat_url": "chat.com/fsigbsidf",
-                                "viewed_services": [
+                               "viewed_services": [
                                     1,
                                     2,
                                     3,
@@ -954,6 +1309,9 @@
                                 "subscribed_services": [
                                     1,
                                     2
+                                ],
+                                "projects": [
+                                    3
                                 ]
                             }
                         }
@@ -961,5 +1319,11 @@
                 }
             }
         }
-    }
+    },
+    "host": "virtserver.swaggerhub.com",
+    "basePath": "/darkish1990/devZone/1.0",
+    "schemes": [
+        "https",
+        "http"
+    ]
 }
