@@ -346,7 +346,7 @@
                                 {
                                     "id": 1,
                                     "name": "חיפוש",
-                                    "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                    "last_updated": "2020-07-20T10:12:53.966Z",
                                     "img": "דרך לתמונה",
                                     "description": "חיפוש דפי אינטרנט ברשת השחורה",
                                     "tags": [
@@ -363,7 +363,7 @@
                                 {
                                     "id": 2,
                                     "name": "חיפוש גיאוגרפי",
-                                    "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                    "last_updated": "2020-07-20T10:12:53.966Z",
                                     "img": "דרך לתמונה",
                                     "description": "חיפוש דפי אינטרנט ברשת השחורה",
                                     "tags": [
@@ -380,7 +380,7 @@
                                 {
                                     "id": 3,
                                     "name": "גובה הגלים",
-                                    "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                    "last_updated": "2020-07-20T10:12:53.966Z",
                                     "img": "WavesLogo.jpg",
                                     "description": "הנגשת נתוני גלים מארמון החול",
                                     "tags": [
@@ -396,7 +396,7 @@
                                 {
                                     "id": 4,
                                     "name": "מפות",
-                                    "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                    "last_updated": "2020-07-20T10:12:53.966Z",
                                     "img": "WavesLogo.jpg",
                                     "description": "שירות המיפוי",
                                     "tags": [
@@ -578,7 +578,7 @@
                                 "id": 3,
                                 "name": "גובה הגלים",
                                 "status": "active",
-                                "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                "last_updated": "2020-07-20T10:12:53.966Z",
                                 "img": "WavesLogo.jpg",
                                 "description": "הנגשת נתוני גלים מארמון החול",
                                 "tags": [
@@ -616,28 +616,28 @@
                                         "path": "TikIfiun.docx",
                                         "title": "תיק אפיון",
                                         "description": "תיק האפיון המפורט של המערכת",
-                                        "date_modified": "ISO \"2020-07-20T10:12:53.966Z\""
+                                        "date_modified": "2020-07-20T10:12:53.966Z"
                                     },
                                     {
                                         "id": "2",
                                         "path": "TikNitur.docx",
                                         "title": "תיק ניטור",
                                         "description": "תיק ניטור על פי תקן חמ\"ל",
-                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                        "date_modified": "2020-04-01T10:50:53.966Z"
                                     },
                                     {
                                         "id": "3",
                                         "path": "Architecture.ppt",
                                         "title": "ארכיטקטורה",
                                         "description": "סביבת Prod",
-                                        "date_modified": "ISO \"2019-05-14T10:50:53.966Z\""
+                                        "date_modified": "2019-05-14T10:50:53.966Z"
                                     },
                                     {
                                         "id": "4",
                                         "path": "Omasim.pdf",
                                         "title": "בדיקת עומסים",
                                         "description": "תוצאות בדיקות עומסים לשירות גובה הגלים",
-                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                        "date_modified": "2020-04-01T10:50:53.966Z"
                                     }
                                 ],
                                 "help_files": []
@@ -666,7 +666,7 @@
                                 "id": 3,
                                 "name": "גובה הגלים",
                                 "status": "active",
-                                "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                "last_updated": "2020-07-20T10:12:53.966Z",
                                 "img": "WavesLogo.jpg",
                                 "description": "הנגשת נתוני גלים מארמון החול",
                                 "tags": [
@@ -705,28 +705,28 @@
                                         "path": "TikIfiun.docx",
                                         "title": "תיק אפיון",
                                         "description": "תיק האפיון המפורט של המערכת",
-                                        "date_modified": "ISO \"2020-07-20T10:12:53.966Z\""
+                                        "date_modified": "2020-07-20T10:12:53.966Z"
                                     },
                                     {
                                         "id": "2",
                                         "path": "TikNitur.docx",
                                         "title": "תיק ניטור",
                                         "description": "תיק ניטור על פי תקן חמ\"ל",
-                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                        "date_modified": "2020-04-01T10:50:53.966Z"
                                     },
                                     {
                                         "id": "3",
                                         "path": "Architecture.ppt",
                                         "title": "ארכיטקטורה",
                                         "description": "סביבת Prod",
-                                        "date_modified": "ISO \"2019-05-14T10:50:53.966Z\""
+                                        "date_modified": "2019-05-14T10:50:53.966Z"
                                     },
                                     {
                                         "id": "4",
                                         "path": "Omasim.pdf",
                                         "title": "בדיקת עומסים",
                                         "description": "תוצאות בדיקות עומסים לשירות גובה הגלים",
-                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                        "date_modified": "2020-04-01T10:50:53.966Z"
                                     }
                                 ],
                                 "help_files" : [
@@ -735,7 +735,7 @@
                                         "path": "WavesTadmit.jpg",
                                         "title": null,
                                         "description": null,
-                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                        "date_modified": "2020-04-01T10:50:53.966Z"
                                     }
                                 ],
                                 "guides": [
@@ -930,7 +930,7 @@
                                 "id": 3,
                                 "name": "גובה הגלים",
                                 "status": "active",
-                                "last_updated": "ISO \"2020-07-20T10:12:53.966Z\"",
+                                "last_updated": "2020-07-20T10:12:53.966Z",
                                 "img": "WavesLogo.jpg",
                                 "description": "הנגשת נתוני גלים מארמון החול",
                                 "tags": [
@@ -969,35 +969,35 @@
                                         "path": "TikIfiun.docx",
                                         "title": "תיק אפיון",
                                         "description": "תיק האפיון המפורט של המערכת",
-                                        "date_modified": "ISO \"2020-07-20T10:12:53.966Z\""
+                                        "date_modified": "2020-07-20T10:12:53.966Z"
                                     },
                                     {
                                         "id": "2",
                                         "path": "TikNitur.docx",
                                         "title": "תיק ניטור",
                                         "description": "תיק ניטור על פי תקן חמ\"ל",
-                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                        "date_modified": "2020-04-01T10:50:53.966Z"
                                     },
                                     {
                                         "id": "3",
                                         "path": "Architecture.ppt",
                                         "title": "ארכיטקטורה",
                                         "description": "סביבת Prod",
-                                        "date_modified": "ISO \"2019-05-14T10:50:53.966Z\""
+                                        "date_modified": "2019-05-14T10:50:53.966Z"
                                     },
                                     {
                                         "id": "4",
                                         "path": "Omasim.pdf",
                                         "title": "בדיקת עומסים",
                                         "description": "תוצאות בדיקות עומסים לשירות גובה הגלים",
-                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                        "date_modified": "2020-04-01T10:50:53.966Z"
                                     },
                                     {
                                         "id": "5",
                                         "path": "Omasim.pdf",
                                         "title": "בדיקת עומסים",
                                         "description": "תוצאות בדיקות עומסים לשירות גובה הגלים",
-                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                        "date_modified": "2020-04-01T10:50:53.966Z"
                                     }
                                     
                                 ],
@@ -1007,14 +1007,14 @@
                                         "path": "WavesTadmit.jpg",
                                         "title": null,
                                         "description": null,
-                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                        "date_modified": "2020-04-01T10:50:53.966Z"
                                     },
                                     {
                                         "id": "7",
                                         "path": "WavesTadmit.jpg",
                                         "title": null,
                                         "description": null,
-                                        "date_modified": "ISO \"2020-04-01T10:50:53.966Z\""
+                                        "date_modified": "2020-04-01T10:50:53.966Z"
                                     }
                                 ],
                                 "guides": [
