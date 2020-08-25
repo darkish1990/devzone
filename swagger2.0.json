@@ -798,7 +798,6 @@
                                                 }
                                             }
                                         }
-                                        
                                     }
                                 },
                                 "tags": {
@@ -809,14 +808,14 @@
                                 },
                                 "graphql": {
                                     "type": "object",
-                                            "properties": {
-                                                "url": {
-                                                    "type": "string"
-                                                },
-                                                "headers": {
-                                                    "type": "object"
-                                                }
-                                            }
+                                    "properties": {
+                                        "url": {
+                                            "type": "string"
+                                        },
+                                        "headers": {
+                                            "type": "object"
+                                        }
+                                    }
                                 },
                                 "swagger": {
                                     "type": "string"
@@ -1053,7 +1052,7 @@
                                         "date_modified": "2020-04-01T10:50:53.966Z"
                                     }
                                 ],
-                                "help_files" : [
+                                "help_files": [
                                     {
                                         "id": "6",
                                         "path": "WavesTadmit.jpg",
@@ -1153,7 +1152,6 @@
                                                 }
                                             }
                                         }
-                                        
                                     }
                                 },
                                 "tags": {
@@ -1164,14 +1162,14 @@
                                 },
                                 "graphql": {
                                     "type": "object",
-                                            "properties": {
-                                                "url": {
-                                                    "type": "string"
-                                                },
-                                                "headers": {
-                                                    "type": "object"
-                                                }
-                                            }
+                                    "properties": {
+                                        "url": {
+                                            "type": "string"
+                                        },
+                                        "headers": {
+                                            "type": "object"
+                                        }
+                                    }
                                 },
                                 "swagger": {
                                     "type": "string"
@@ -1337,7 +1335,6 @@
                                         "description": "תוצאות בדיקות עומסים לשירות גובה הגלים",
                                         "date_modified": "2020-04-01T10:50:53.966Z"
                                     }
-                                    
                                 ],
                                 "help_files": [
                                     {
@@ -1610,12 +1607,21 @@
                             "properties": {
                                 "file": {
                                     "type": "object"
+                                },
+                                "mainFolder": {
+                                    "type": "string"
+                                },
+                                "subFolder": {
+                                    "type": "string"
+                                },
+                                "serviceSubFolder": {
+                                    "type": "string"
                                 }
                             }
                         }
                     }
                 ],
-                "description": "Uploads a file",
+                "description": "Uploads a file. what you should pass is main folder (projects/services) subfolder(projectId/serviceId) and if your in service which subfolder you want aka docs/media/guide1/guide2/guide{id} and ofcourse file holds the actual stream or blob of file by formData()",
                 "responses": {
                     "200": {
                         "description": "the file, and the id",
@@ -1638,7 +1644,7 @@
                         "description": "gets the user data",
                         "schema": {
                             "example": {
-                               "viewed_services": [
+                                "viewed_services": [
                                     1,
                                     2,
                                     3,
