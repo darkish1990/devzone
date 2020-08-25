@@ -68,6 +68,118 @@
                                         1
                                     ],
                                     "services": null
+                                },
+                                {
+                                    "id": 5,
+                                    "arm": 4,
+                                    "name": "Google",
+                                    "img": "GoogleLogo.png",
+                                    "description": "מנוע החיפוש הטוב ביותר ברשת השחורה",
+                                    "tags": [
+                                        1,
+                                        2
+                                    ],
+                                    "services": [
+                                        1,
+                                        2
+                                    ]
+                                },
+                                {
+                                    "id": 6,
+                                    "arm": 2,
+                                    "name": "ארמון החול",
+                                    "img": "CastleLogo.png",
+                                    "description": "מערכת ארמון החול היא מערכת שליטה מרכזית בחופי הים",
+                                    "tags": [
+                                        1,
+                                        3,
+                                        5
+                                    ],
+                                    "services": [
+                                        3
+                                    ]
+                                },
+                                {
+                                    "id": 7,
+                                    "arm": 3,
+                                    "name": "גב האומה",
+                                    "img": "MapsLogo.png",
+                                    "description": "שירותי מיפוי",
+                                    "tags": [
+                                        2,
+                                        4
+                                    ],
+                                    "services": [
+                                        4
+                                    ]
+                                },
+                                {
+                                    "id": 8,
+                                    "arm": 1,
+                                    "name": "מאגר רכבים",
+                                    "img": "CarsLogo.png",
+                                    "description": "מאגר רכבים, מנגיש את כלל הרכבים הפעילים והארכיונים ומאפשר ביצוע סינון לפי חתכים שונים",
+                                    "tags": [
+                                        2,
+                                        1
+                                    ],
+                                    "services": null
+                                },
+                                {
+                                    "id": 9,
+                                    "arm": 4,
+                                    "name": "Google",
+                                    "img": "GoogleLogo.png",
+                                    "description": "מנוע החיפוש הטוב ביותר ברשת השחורה",
+                                    "tags": [
+                                        1,
+                                        2
+                                    ],
+                                    "services": [
+                                        1,
+                                        2
+                                    ]
+                                },
+                                {
+                                    "id": 10,
+                                    "arm": 2,
+                                    "name": "ארמון החול",
+                                    "img": "CastleLogo.png",
+                                    "description": "מערכת ארמון החול היא מערכת שליטה מרכזית בחופי הים",
+                                    "tags": [
+                                        1,
+                                        3,
+                                        5
+                                    ],
+                                    "services": [
+                                        3
+                                    ]
+                                },
+                                {
+                                    "id": 11,
+                                    "arm": 3,
+                                    "name": "גב האומה",
+                                    "img": "MapsLogo.png",
+                                    "description": "שירותי מיפוי",
+                                    "tags": [
+                                        2,
+                                        4
+                                    ],
+                                    "services": [
+                                        4
+                                    ]
+                                },
+                                {
+                                    "id": 12,
+                                    "arm": 1,
+                                    "name": "מאגר רכבים",
+                                    "img": "CarsLogo.png",
+                                    "description": "מאגר רכבים, מנגיש את כלל הרכבים הפעילים והארכיונים ומאפשר ביצוע סינון לפי חתכים שונים",
+                                    "tags": [
+                                        2,
+                                        1
+                                    ],
+                                    "services": null
                                 }
                             ]
                         },
@@ -117,12 +229,6 @@
                                 },
                                 "name": {
                                     "type": "string"
-                                },
-                                "tags": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "integer"
-                                    }
                                 }
                             }
                         }
@@ -291,12 +397,6 @@
                                 },
                                 "name": {
                                     "type": "string"
-                                },
-                                "tags": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "integer"
-                                    }
                                 }
                             }
                         }
@@ -355,7 +455,13 @@
                                         3
                                     ],
                                     "project_id": 1,
-                                    "graphql": "null||url",
+                                    "graphql": {
+                                        "url": "url",
+                                        "headers": {
+                                            "content-type": "application/json",
+                                            "reality-id": "12"
+                                        }
+                                    },
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
                                     "views": 20
@@ -372,7 +478,13 @@
                                         3
                                     ],
                                     "project_id": 1,
-                                    "graphql": "null||url",
+                                    "graphql": {
+                                        "url": "url",
+                                        "headers": {
+                                            "content-type": "application/json",
+                                            "reality-id": "12"
+                                        }
+                                    },
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
                                     "views": 167
@@ -388,7 +500,13 @@
                                         3
                                     ],
                                     "project_id": 2,
-                                    "graphql": "null||url",
+                                    "graphql": {
+                                        "url": "url",
+                                        "headers": {
+                                            "content-type": "application/json",
+                                            "reality-id": "12"
+                                        }
+                                    },
                                     "swagger": "null||url",
                                     "request_protocol": "B2C",
                                     "views": 33
@@ -404,7 +522,193 @@
                                         4
                                     ],
                                     "project_id": 3,
-                                    "graphql": "null||url",
+                                    "graphql": {
+                                        "url": "url",
+                                        "headers": {
+                                            "content-type": "application/json",
+                                            "reality-id": "12"
+                                        }
+                                    },
+                                    "swagger": "null||url",
+                                    "request_protocol": "B2B",
+                                    "views": 3
+                                },
+                                {
+                                    "id": 5,
+                                    "name": "חיפוש",
+                                    "last_updated": "2020-07-20T10:12:53.966Z",
+                                    "img": "דרך לתמונה",
+                                    "description": "חיפוש דפי אינטרנט ברשת השחורה",
+                                    "tags": [
+                                        1,
+                                        2,
+                                        3
+                                    ],
+                                    "project_id": 1,
+                                    "graphql": {
+                                        "url": "url",
+                                        "headers": {
+                                            "content-type": "application/json",
+                                            "reality-id": "12"
+                                        }
+                                    },
+                                    "swagger": "null||url",
+                                    "request_protocol": "B2B",
+                                    "views": 20
+                                },
+                                {
+                                    "id": 6,
+                                    "name": "חיפוש גיאוגרפי",
+                                    "last_updated": "2020-07-20T10:12:53.966Z",
+                                    "img": "דרך לתמונה",
+                                    "description": "חיפוש דפי אינטרנט ברשת השחורה",
+                                    "tags": [
+                                        1,
+                                        2,
+                                        3
+                                    ],
+                                    "project_id": 1,
+                                    "graphql": {
+                                        "url": "url",
+                                        "headers": {
+                                            "content-type": "application/json",
+                                            "reality-id": "12"
+                                        }
+                                    },
+                                    "swagger": "null||url",
+                                    "request_protocol": "B2B",
+                                    "views": 167
+                                },
+                                {
+                                    "id": 7,
+                                    "name": "גובה הגלים",
+                                    "last_updated": "2020-07-20T10:12:53.966Z",
+                                    "img": "WavesLogo.jpg",
+                                    "description": "הנגשת נתוני גלים מארמון החול",
+                                    "tags": [
+                                        1,
+                                        3
+                                    ],
+                                    "project_id": 2,
+                                    "graphql": {
+                                        "url": "url",
+                                        "headers": {
+                                            "content-type": "application/json",
+                                            "reality-id": "12"
+                                        }
+                                    },
+                                    "swagger": "null||url",
+                                    "request_protocol": "B2C",
+                                    "views": 33
+                                },
+                                {
+                                    "id": 8,
+                                    "name": "מפות",
+                                    "last_updated": "2020-07-20T10:12:53.966Z",
+                                    "img": "WavesLogo.jpg",
+                                    "description": "שירות המיפוי",
+                                    "tags": [
+                                        2,
+                                        4
+                                    ],
+                                    "project_id": 3,
+                                    "graphql": {
+                                        "url": "url",
+                                        "headers": {
+                                            "content-type": "application/json",
+                                            "reality-id": "12"
+                                        }
+                                    },
+                                    "swagger": "null||url",
+                                    "request_protocol": "B2B",
+                                    "views": 3
+                                },
+                                {
+                                    "id": 9,
+                                    "name": "חיפוש",
+                                    "last_updated": "2020-07-20T10:12:53.966Z",
+                                    "img": "דרך לתמונה",
+                                    "description": "חיפוש דפי אינטרנט ברשת השחורה",
+                                    "tags": [
+                                        1,
+                                        2,
+                                        3
+                                    ],
+                                    "project_id": 1,
+                                    "graphql": {
+                                        "url": "url",
+                                        "headers": {
+                                            "content-type": "application/json",
+                                            "reality-id": "12"
+                                        }
+                                    },
+                                    "swagger": "null||url",
+                                    "request_protocol": "B2B",
+                                    "views": 20
+                                },
+                                {
+                                    "id": 10,
+                                    "name": "חיפוש גיאוגרפי",
+                                    "last_updated": "2020-07-20T10:12:53.966Z",
+                                    "img": "דרך לתמונה",
+                                    "description": "חיפוש דפי אינטרנט ברשת השחורה",
+                                    "tags": [
+                                        1,
+                                        2,
+                                        3
+                                    ],
+                                    "project_id": 1,
+                                    "graphql": {
+                                        "url": "url",
+                                        "headers": {
+                                            "content-type": "application/json",
+                                            "reality-id": "12"
+                                        }
+                                    },
+                                    "swagger": "null||url",
+                                    "request_protocol": "B2B",
+                                    "views": 167
+                                },
+                                {
+                                    "id": 11,
+                                    "name": "גובה הגלים",
+                                    "last_updated": "2020-07-20T10:12:53.966Z",
+                                    "img": "WavesLogo.jpg",
+                                    "description": "הנגשת נתוני גלים מארמון החול",
+                                    "tags": [
+                                        1,
+                                        3
+                                    ],
+                                    "project_id": 2,
+                                    "graphql": {
+                                        "url": "url",
+                                        "headers": {
+                                            "content-type": "application/json",
+                                            "reality-id": "12"
+                                        }
+                                    },
+                                    "swagger": "null||url",
+                                    "request_protocol": "B2C",
+                                    "views": 33
+                                },
+                                {
+                                    "id": 12,
+                                    "name": "מפות",
+                                    "last_updated": "2020-07-20T10:12:53.966Z",
+                                    "img": "WavesLogo.jpg",
+                                    "description": "שירות המיפוי",
+                                    "tags": [
+                                        2,
+                                        4
+                                    ],
+                                    "project_id": 3,
+                                    "graphql": {
+                                        "url": "url",
+                                        "headers": {
+                                            "content-type": "application/json",
+                                            "reality-id": "12"
+                                        }
+                                    },
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
                                     "views": 3
@@ -504,7 +808,15 @@
                                     }
                                 },
                                 "graphql": {
-                                    "type": "string"
+                                    "type": "object",
+                                            "properties": {
+                                                "url": {
+                                                    "type": "string"
+                                                },
+                                                "headers": {
+                                                    "type": "object"
+                                                }
+                                            }
                                 },
                                 "swagger": {
                                     "type": "string"
@@ -586,7 +898,13 @@
                                     3
                                 ],
                                 "project_id": 2,
-                                "graphql": "null||url",
+                                "graphql": {
+                                    "url": "url",
+                                    "headers": {
+                                        "content-type": "application/json",
+                                        "reality-id": "12"
+                                    }
+                                },
                                 "swagger": "null||url",
                                 "request_protocol": "B2C",
                                 "views": 33,
@@ -674,7 +992,13 @@
                                     3
                                 ],
                                 "project_id": 2,
-                                "graphql": "null||url",
+                                "graphql": {
+                                    "url": "url",
+                                    "headers": {
+                                        "content-type": "application/json",
+                                        "reality-id": "12"
+                                    }
+                                },
                                 "swagger": "null||url",
                                 "request_protocol": "B2C",
                                 "views": 33,
@@ -839,7 +1163,15 @@
                                     }
                                 },
                                 "graphql": {
-                                    "type": "string"
+                                    "type": "object",
+                                            "properties": {
+                                                "url": {
+                                                    "type": "string"
+                                                },
+                                                "headers": {
+                                                    "type": "object"
+                                                }
+                                            }
                                 },
                                 "swagger": {
                                     "type": "string"
@@ -938,7 +1270,13 @@
                                     3
                                 ],
                                 "project_id": 2,
-                                "graphql": "null||url",
+                                "graphql": {
+                                    "url": "url",
+                                    "headers": {
+                                        "content-type": "application/json",
+                                        "reality-id": "12"
+                                    }
+                                },
                                 "swagger": "null||url",
                                 "request_protocol": "B2C",
                                 "views": 33,
