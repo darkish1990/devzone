@@ -464,7 +464,8 @@
                                     },
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
-                                    "views": 20
+                                    "views": 20,
+                                    "status": "active"
                                 },
                                 {
                                     "id": 2,
@@ -487,7 +488,8 @@
                                     },
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
-                                    "views": 167
+                                    "views": 167,
+                                    "status": "active"
                                 },
                                 {
                                     "id": 3,
@@ -509,7 +511,8 @@
                                     },
                                     "swagger": "null||url",
                                     "request_protocol": "B2C",
-                                    "views": 33
+                                    "views": 33,
+                                    "status": "active"
                                 },
                                 {
                                     "id": 4,
@@ -531,7 +534,8 @@
                                     },
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
-                                    "views": 3
+                                    "views": 3,
+                                    "status": "active"
                                 },
                                 {
                                     "id": 5,
@@ -554,7 +558,8 @@
                                     },
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
-                                    "views": 20
+                                    "views": 20,
+                                    "status": "active"
                                 },
                                 {
                                     "id": 6,
@@ -577,7 +582,8 @@
                                     },
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
-                                    "views": 167
+                                    "views": 167,
+                                    "status": "active"
                                 },
                                 {
                                     "id": 7,
@@ -621,7 +627,8 @@
                                     },
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
-                                    "views": 3
+                                    "views": 3,
+                                    "status": "active"
                                 },
                                 {
                                     "id": 9,
@@ -644,7 +651,8 @@
                                     },
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
-                                    "views": 20
+                                    "views": 20,
+                                    "status": "active"
                                 },
                                 {
                                     "id": 10,
@@ -667,7 +675,8 @@
                                     },
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
-                                    "views": 167
+                                    "views": 167,
+                                    "status": "active"
                                 },
                                 {
                                     "id": 11,
@@ -689,7 +698,8 @@
                                     },
                                     "swagger": "null||url",
                                     "request_protocol": "B2C",
-                                    "views": 33
+                                    "views": 33,
+                                    "status": "active"
                                 },
                                 {
                                     "id": 12,
@@ -711,7 +721,8 @@
                                     },
                                     "swagger": "null||url",
                                     "request_protocol": "B2B",
-                                    "views": 3
+                                    "views": 3,
+                                    "status": "active"
                                 }
                             ]
                         },
@@ -1467,6 +1478,7 @@
                         "description": "gets the user data from id",
                         "schema": {
                             "example": {
+                                "id": "s8888888",
                                 "name": "string",
                                 "email": "something@something.com",
                                 "chat_url": "chat.com/fsigbsidf"
@@ -1476,31 +1488,30 @@
                 }
             }
         },
-        "/notifications": {
-            "delete": {
+        "/notifications/updateStatus/{id}": {
+            "post": {
                 "parameters": [
                     {
-                        "name": "notifications Parameters",
-                        "description": "the parameters in the body of the request.",
-                        "in": "body",
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                                "type": "integer"
-                            }
-                        }
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of notification to update",
+                        "required": true,
+                        "type": "integer"
                     }
                 ],
-                "description": "removes notifications",
+                "description": "update the status of the given notification",
                 "responses": {
                     "200": {
-                        "description": "notifications deleted",
+                        "description": "notification's status updated",
                         "schema": {
-                            "example": [
-                                1,
-                                2,
-                                3
-                            ]
+                            "example": {
+                                "id": 3,
+                                "read": true,
+                                "time": "2020-07-20T10:12:53.966Z",
+                                "content": "markdown rtl 3",
+                                "link": "https://www.google.com/",
+                                "img": "GoogleLogo.png"
+                            }
                         }
                     }
                 }
@@ -1656,6 +1667,32 @@
                                 ],
                                 "projects": [
                                     3
+                                ],
+                                "notifications": [
+                                    {
+                                        "id": 1,
+                                        "read": true,
+                                        "time": "2020-07-20T10:12:53.966Z",
+                                        "content": "שירות [גובה הגלים](https://duckduckgo.com) עדכן את הAPI שלו",
+                                        "link": "https://www.google.com/",
+                                        "img": "GoogleLogo.png"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "read": false,
+                                        "time": "2020-07-20T10:12:53.966Z",
+                                        "content": "שירות [חיפוש](https://duckduckgo.com) עדכן את הAPI שלו",
+                                        "link": "https://www.google.com/",
+                                        "img": "GoogleLogo.png"
+                                    },
+                                    {
+                                        "id": 3,
+                                        "read": false,
+                                        "time": "2020-07-20T10:12:53.966Z",
+                                        "content": "שירות מפות נמחק",
+                                        "link": "https://www.google.com/",
+                                        "img": "GoogleLogo.png"
+                                    }
                                 ]
                             }
                         }
