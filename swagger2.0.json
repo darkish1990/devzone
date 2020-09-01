@@ -1076,7 +1076,7 @@
                                     {
                                         "id": 1,
                                         "title": "איך להתממשק לשירות?",
-                                        "content": "גם זה צריך להיות בMarkdown. כאן יהיה הסבר יחסית ארוך לגבי התממשקות לשירות שלנו. כנראה שתצטרכו להוסיף קבצים מסוימים, שימו לב לצילום המסך המצורף והיעזרו בו.",
+                                        "content": "זהו הסבר ב**בולד**",
                                         "img": "Guide.png"
                                     }
                                 ]
@@ -1367,7 +1367,7 @@
                                     {
                                         "id": 1,
                                         "title": "איך להתממשק לשירות?",
-                                        "content": "גם זה צריך להיות בMarkdown. כאן יהיה הסבר יחסית ארוך לגבי התממשקות לשירות שלנו. כנראה שתצטרכו להוסיף קבצים מסוימים, שימו לב לצילום המסך המצורף והיעזרו בו.",
+                                        "content": "זהו הסבר ב**בולד**",
                                         "img": "Guide.png"
                                     }
                                 ]
@@ -1489,7 +1489,7 @@
             }
         },
         "/notifications/updateStatus/{id}": {
-            "post": {
+            "put": {
                 "parameters": [
                     {
                         "name": "id",
@@ -1505,12 +1505,12 @@
                         "description": "notification's status updated",
                         "schema": {
                             "example": {
-                                "id": 3,
-                                "read": true,
+                                "id": 2,
                                 "time": "2020-07-20T10:12:53.966Z",
-                                "content": "markdown rtl 3",
+                                "read": false,
                                 "link": "https://www.google.com/",
-                                "img": "GoogleLogo.png"
+                                "content": "שירות **חיפוש** עדכן את הAPI שלו",
+                                "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Photos_icon_%282020%29.svg/1200px-Google_Photos_icon_%282020%29.svg.png"
                             }
                         }
                     }
@@ -1673,25 +1673,25 @@
                                         "id": 1,
                                         "read": true,
                                         "time": "2020-07-20T10:12:53.966Z",
-                                        "content": "שירות [גובה הגלים](https://duckduckgo.com) עדכן את הAPI שלו",
+                                        "content": "שירות **גובה הגלים** עדכן את הAPI שלו",
                                         "link": "https://www.google.com/",
-                                        "img": "GoogleLogo.png"
+                                        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Photos_icon_%282020%29.svg/1200px-Google_Photos_icon_%282020%29.svg.png"
                                     },
                                     {
                                         "id": 2,
                                         "read": false,
                                         "time": "2020-07-20T10:12:53.966Z",
-                                        "content": "שירות [חיפוש](https://duckduckgo.com) עדכן את הAPI שלו",
+                                        "content": "שירות **חיפוש** עדכן את הAPI שלו",
                                         "link": "https://www.google.com/",
-                                        "img": "GoogleLogo.png"
+                                        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Google_Photos_icon_%282020%29.svg/1200px-Google_Photos_icon_%282020%29.svg.png"
                                     },
                                     {
                                         "id": 3,
                                         "read": false,
                                         "time": "2020-07-20T10:12:53.966Z",
                                         "content": "שירות מפות נמחק",
-                                        "link": "https://www.google.com/",
-                                        "img": "GoogleLogo.png"
+                                        "link": null,
+                                        "img": "https://i.gadgets360cdn.com/large/delete_apps_thumb_1532676846539.jpg"
                                     }
                                 ]
                             }
